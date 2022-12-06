@@ -79,8 +79,7 @@ CREATE TABLE sportsman(
     full_name varchar(100) NOT NULL,
     sex sex NOT NULL,
     date_of_birth date NOT NULL,
-    fk_sport_team_id int REFERENCES sport_team,
-    fk_preparation_id int REFERENCES preparation
+    fk_sport_team_id int REFERENCES sport_team
 );
 
 CREATE TABLE personnel(
@@ -94,6 +93,7 @@ CREATE TABLE sportsman_sport(
     fk_sportsman_id int REFERENCES sportsman,
     fk_sport_id int REFERENCES sport,
     rate int DEFAULT 0,
+    fk_preparation_id int REFERENCES preparation,
     PRIMARY KEY(fk_sportsman_id, fk_sport_id)
 );
 
