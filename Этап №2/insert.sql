@@ -66,11 +66,11 @@ VALUES
     (2, 3),
     (3, 1);
 
-INSERT INTO sportsman(full_name, sex, date_of_birth, fk_sport_team_id, fk_preparation_id)
+INSERT INTO sportsman(full_name, sex, date_of_birth, fk_sport_team_id)
 VALUES
-    ('Бсэйн Уолт', 'мужчина', '1985-09-12', 3, 4),
-    ('Риштиану Коналду', 'мужчина', '2010-03-11', 2, 2),
-    ('Мерилин Монор', 'женщина', '2000-08-25', 1, 3);
+    ('Бсэйн Уолт', 'мужчина', '1985-09-12', 3),
+    ('Риштиану Коналду', 'мужчина', '2010-03-11', 2),
+    ('Мерилин Монор', 'женщина', '2000-08-25', 1);
 
 INSERT INTO personnel(fk_sportsman_id, fk_doctor_id, fk_coach_id)
 VALUES
@@ -78,11 +78,11 @@ VALUES
     (2,1,2),
     (3,3,1);
 
-INSERT INTO sportsman_sport(fk_sportsman_id, fk_sport_id, rate)
+INSERT INTO sportsman_sport(fk_sportsman_id, fk_sport_id, rate, fk_preparation_id)
 VALUES
-    (1, 2, 1800),
-    (2, 3, 2300),
-    (3, 1, 1975);
+    (1, 2, 1800, 4),
+    (2, 3, 2300, 2),
+    (3, 1, 1975, 3);
 
 INSERT INTO sportsman_competition(fk_sportsman_id, fk_competition_id, fk_preparation_id, rating_difference)
 VALUES
