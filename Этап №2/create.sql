@@ -36,7 +36,8 @@ CREATE TABLE sport_team(
 CREATE TABLE sport_team_sport(
     fk_sport_team_id int REFERENCES sport_team,
     fk_sport_id int REFERENCES sport,
-    PRIMARY KEY(fk_sport_team_id, fk_sport_id)
+    fk_sportsman_id int REFERENCES sportsman,
+    PRIMARY KEY(fk_sport_team_id, fk_sport_id, fk_sportsman_id)
 );
 
 CREATE TABLE baa(
