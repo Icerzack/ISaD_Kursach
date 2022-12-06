@@ -118,11 +118,11 @@ VALUES
     (2, 391, 88),
     (3, 1192, 1425);
 
-INSERT INTO preparation_baa(fk_preparation_id, fk_baa_id)
+INSERT INTO preparation_baa(fk_preparation_id, fk_baa_id, complex_name)
 VALUES
-    (1, 1),
-    (1, 2),
-    (2, 1),
-    (2, 3),
-    (3, 1),
-    (3, 2)
+    (1, 1, "я"),
+    (1, 2, "ты"),
+    (2, 1, "он"),
+    (2, 3, "она"),
+    (3, 1, "вместе"),
+    (3, 2, "семья")
