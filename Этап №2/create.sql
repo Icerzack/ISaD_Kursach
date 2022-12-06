@@ -125,5 +125,6 @@ CREATE TABLE training_rate(
 CREATE TABLE preparation_baa(
     fk_preparation_id int REFERENCES preparation,
     fk_baa_id int REFERENCES baa,
+    complex_name varchar(100),
     PRIMARY KEY(fk_preparation_id, fk_baa_id)
 );
