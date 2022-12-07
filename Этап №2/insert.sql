@@ -7,8 +7,8 @@ VALUES
 INSERT INTO competition(name, fk_sport_id, date_of_event, place, prestige, description)
 VALUES
     ('Чемпионат СПб', 1, '2017-03-14', 'Вяземский переулок 5', 90, 'Офигеть какой важный турнир'),
-    ('Соревнование среди двора дома №13', 3, '1999-12-31', 'Улица Пушкина 1837', 1, 'Отмывание денег за капитальный ремонт'),
-    ('Кубок СПб', 2, '2020-05-30', 'Думская', 70, 'Почти офигеть какой важный турнир');
+    ('Соревнование среди двора дома №13', 2, '1999-12-31', 'Улица Пушкина 1837', 1, 'Отмывание денег за капитальный ремонт'),
+    ('Кубок СПб', 3, '2020-05-30', 'Думская', 70, 'Почти офигеть какой важный турнир');
 
 INSERT INTO doctor(name, rate)
 VALUES
@@ -58,13 +58,11 @@ VALUES
     (3, 2),
     (3, 3);
 
-INSERT INTO preparation(fk_baa_id, fk_training_id)
+INSERT INTO preparation(complex_name)
 VALUES
-    (1, 2),
-    (1, 3),
-    (2, 2),
-    (2, 3),
-    (3, 1);
+    ('Этот комплекс самый лучший комплекс на Земле'),
+    ('Из грязи в Викинги'),
+    ('Спартанцы плачут по таким комплексам');
 
 INSERT INTO sportsman(full_name, sex, date_of_birth)
 VALUES
@@ -80,18 +78,18 @@ VALUES
 
 INSERT INTO sportsman_sport(fk_sportsman_id, fk_sport_id, rate, fk_preparation_id)
 VALUES
-    (1, 2, 1800, 4),
+    (1, 2, 1800, 1),
     (2, 3, 2300, 2),
     (3, 1, 1975, 3);
 
 INSERT INTO sportsman_competition(fk_sportsman_id, fk_competition_id, fk_preparation_id, rating_difference)
 VALUES
-    (1, 1, 3, 10),
+    (1, 3, 3, 10),
     (2, 2, 2, 5),
     (2, 3, 1, -3),
     (3, 1, 2, 2);
 
-INSERT INTO sport_team_sport(fk_sport_team_id, fk_sport_id, fk_sport_id)
+INSERT INTO sport_team_sport(fk_sport_team_id, fk_sport_id, fk_sportsman_id)
 VALUES
     (1, 2, 1),
     (2, 2, 2),
@@ -108,9 +106,9 @@ VALUES
 
 INSERT INTO preparation_rate(fk_preparation_id, effectiveness)
 VALUES
-    (1, 42.56),
-    (2, 33.12),
-    (3, -21.98);
+    (1, 420),
+    (2, 100),
+    (3, -390);
 
 INSERT INTO training_rate(fk_training_id, number_uses, all_time_rate_difference)
 VALUES
@@ -118,11 +116,20 @@ VALUES
     (2, 391, 88),
     (3, 1192, 1425);
 
-INSERT INTO preparation_baa(fk_preparation_id, fk_baa_id, complex_name)
+INSERT INTO preparation_baa(fk_preparation_id, fk_baa_id)
 VALUES
-    (1, 1, 'я'),
-    (1, 2, 'ты'),
-    (2, 1, 'он'),
-    (2, 3, 'она'),
-    (3, 1, 'вместе'),
-    (3, 2, 'семья')
+    (1, 1),
+    (1, 2),
+    (2, 1),
+    (2, 3),
+    (3, 1),
+    (3, 2);
+
+INSERT INTO preparation_training(fk_preparation_id, fk_training_id)
+VALUES
+    (1, 2),
+    (1, 3),
+    (2, 2),
+    (2, 3),
+    (3, 1),
+    (3, 3);

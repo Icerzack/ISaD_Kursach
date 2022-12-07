@@ -1,11 +1,11 @@
 -- CREATE TYPE sex AS ENUM ('мужчина', 'женщина', 'другое');
 
-CREATE TABLE sport(
+CREATE TABLE IF NOT EXISTS sport(
     sport_id serial PRIMARY KEY,
     name varchar(50) UNIQUE NOT NULL
 );
 
-CREATE TABLE competition(
+CREATE TABLE IF NOT EXISTS competition(
     competition_id serial PRIMARY KEY,
     name varchar(100) NOT NULL,
     fk_sport_id int REFERENCES sport NOT NULL,
@@ -15,32 +15,25 @@ CREATE TABLE competition(
     description text
 );
 
-CREATE TABLE doctor(
+CREATE TABLE IF NOT EXISTS doctor(
     doctor_id serial PRIMARY KEY,
     name varchar(100) NOT NULL,
     rate int DEFAULT 0
 );
 
-CREATE TABLE coach(
+CREATE TABLE IF NOT EXISTS coach(
     coach_id serial PRIMARY KEY,
     name varchar(50) NOT NULL,
     rate int DEFAULT 0
 );
 
-CREATE TABLE sport_team(
+CREATE TABLE IF NOT EXISTS sport_team(
     sport_team_id serial PRIMARY KEY,
     name varchar(50) NOT NULL,
     average_rate double precision
 );
 
-CREATE TABLE sport_team_sport(
-    fk_sport_team_id int REFERENCES sport_team,
-    fk_sport_id int REFERENCES sport,
-    fk_sportsman_id int REFERENCES sportsman,
-    PRIMARY KEY(fk_sport_team_id, fk_sport_id, fk_sportsman_id)
-);
-
-CREATE TABLE baa(
+CREATE TABLE IF NOT EXISTS baa(
     baa_id serial PRIMARY KEY,
     name varchar(100) NOT NULL,
     manufacturer varchar(100),
@@ -48,34 +41,33 @@ CREATE TABLE baa(
     UNIQUE(name, manufacturer, description)
 );
 
-CREATE TABLE exercise(
+CREATE TABLE IF NOT EXISTS exercise(
     exercise_id serial PRIMARY KEY,
     name varchar(100) NOT NULL,
     description text,
     UNIQUE(name, description)
 );
 
-CREATE TABLE training(
+CREATE TABLE IF NOT EXISTS training(
     training_id serial PRIMARY KEY,
     name varchar(100) NOT NULL,
     description text,
     UNIQUE(name, description)
 );
 
-CREATE TABLE training_exercise(
+CREATE TABLE IF NOT EXISTS training_exercise(
     fk_training_id int REFERENCES training,
     fk_exercise_id int REFERENCES exercise,
     PRIMARY KEY(fk_training_id, fk_exercise_id)
 );
 
-CREATE TABLE preparation(
+CREATE TABLE IF NOT EXISTS preparation(
     preparation_id serial PRIMARY KEY,
-    fk_baa_id int REFERENCES baa,
-    fk_training_id int REFERENCES training,
-    UNIQUE(fk_baa_id, fk_training_id)
+    complex_name varchar(100),
+    UNIQUE(complex_name)
 );
 
-CREATE TABLE sportsman(
+CREATE TABLE IF NOT EXISTS sportsman(
     sportsman_id serial PRIMARY KEY,
     full_name varchar(100) NOT NULL,
     sex sex NOT NULL,
@@ -83,14 +75,21 @@ CREATE TABLE sportsman(
     fk_sport_team_id int REFERENCES sport_team
 );
 
-CREATE TABLE personnel(
+CREATE TABLE IF NOT EXISTS sport_team_sport(
+    fk_sport_team_id int REFERENCES sport_team,
+    fk_sport_id int REFERENCES sport,
+    fk_sportsman_id int REFERENCES sportsman,
+    PRIMARY KEY(fk_sport_team_id, fk_sport_id, fk_sportsman_id)
+);
+
+CREATE TABLE IF NOT EXISTS personnel(
     fk_sportsman_id int REFERENCES sportsman,
     fk_doctor_id int REFERENCES doctor,
     fk_coach_id int REFERENCES coach,
     PRIMARY KEY(fk_sportsman_id,fk_doctor_id,fk_coach_id)
 );
 
-CREATE TABLE sportsman_sport(
+CREATE TABLE IF NOT EXISTS sportsman_sport(
     fk_sportsman_id int REFERENCES sportsman,
     fk_sport_id int REFERENCES sport,
     rate int DEFAULT 0,
@@ -98,7 +97,7 @@ CREATE TABLE sportsman_sport(
     PRIMARY KEY(fk_sportsman_id, fk_sport_id)
 );
 
-CREATE TABLE sportsman_competition(
+CREATE TABLE IF NOT EXISTS sportsman_competition(
     fk_sportsman_id int REFERENCES sportsman,
     fk_competition_id int REFERENCES competition,
     fk_preparation_id int REFERENCES preparation,
@@ -106,26 +105,31 @@ CREATE TABLE sportsman_competition(
     PRIMARY KEY(fk_sportsman_id, fk_competition_id)
 );
 
-CREATE TABLE baa_rate(
+CREATE TABLE IF NOT EXISTS baa_rate(
      fk_baa_id int PRIMARY KEY REFERENCES baa,
      number_uses int DEFAULT 0,
      all_time_rate_difference int DEFAULT 0
 );
 
-CREATE TABLE preparation_rate(
+CREATE TABLE IF NOT EXISTS preparation_rate(
     fk_preparation_id int PRIMARY KEY REFERENCES preparation,
-    effectiveness double precision DEFAULT 0.0
+    effectiveness bigint DEFAULT 0
 );
 
-CREATE TABLE training_rate(
+CREATE TABLE IF NOT EXISTS training_rate(
     fk_training_id int PRIMARY KEY REFERENCES training,
     number_uses int DEFAULT 0,
     all_time_rate_difference int DEFAULT 0
 );
 
-CREATE TABLE preparation_baa(
+CREATE TABLE IF NOT EXISTS preparation_baa(
     fk_preparation_id int REFERENCES preparation,
     fk_baa_id int REFERENCES baa,
-    complex_name varchar(100),
     PRIMARY KEY(fk_preparation_id, fk_baa_id)
+);
+
+CREATE TABLE IF NOT EXISTS preparation_training(
+    fk_preparation_id int REFERENCES preparation,
+    fk_training_id int REFERENCES training,
+    PRIMARY KEY(fk_preparation_id, fk_training_id)
 );
