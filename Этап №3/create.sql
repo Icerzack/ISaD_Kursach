@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS sport(
 CREATE TABLE IF NOT EXISTS competition(
     competition_id serial PRIMARY KEY,
     name varchar(100) NOT NULL,
-    fk_sport_id int REFERENCES sport NOT NULL,
+    fk_sport_id int REFERENCES sport NOT NULL ON DELETE SET NULL,
     date_of_event date NOT NULL,
     place varchar(100) NOT NULL,
     prestige smallint CHECK (prestige >= 0 and prestige <= 100),
@@ -56,8 +56,8 @@ CREATE TABLE IF NOT EXISTS training(
 );
 
 CREATE TABLE IF NOT EXISTS training_exercise(
-    fk_training_id int REFERENCES training,
-    fk_exercise_id int REFERENCES exercise,
+    fk_training_id int REFERENCES training ON DELETE CASCADE,
+    fk_exercise_id int REFERENCES exercise ON DELETE SET NULL,
     PRIMARY KEY(fk_training_id, fk_exercise_id)
 );
 
@@ -72,64 +72,64 @@ CREATE TABLE IF NOT EXISTS sportsman(
     full_name varchar(100) NOT NULL,
     sex sex NOT NULL,
     date_of_birth date NOT NULL,
-    fk_sport_team_id int REFERENCES sport_team
+    fk_sport_team_id int REFERENCES sport_team ON DELETE SET NULL
 );
 
 CREATE TABLE IF NOT EXISTS sport_team_sport(
-    fk_sport_team_id int REFERENCES sport_team,
-    fk_sport_id int REFERENCES sport,
-    fk_sportsman_id int REFERENCES sportsman,
+    fk_sport_team_id int REFERENCES sport_team ON DELETE CASCADE,
+    fk_sport_id int REFERENCES sport ON DELETE SET NULL,
+    fk_sportsman_id int REFERENCES sportsman ON DELETE SET NULL,
     PRIMARY KEY(fk_sport_team_id, fk_sport_id, fk_sportsman_id)
 );
 
 CREATE TABLE IF NOT EXISTS personnel(
-    fk_sportsman_id int REFERENCES sportsman,
-    fk_doctor_id int REFERENCES doctor,
-    fk_coach_id int REFERENCES coach,
+    fk_sportsman_id int REFERENCES sportsman ON DELETE CASCADE,
+    fk_doctor_id int REFERENCES doctor ON DELETE SET NULL,
+    fk_coach_id int REFERENCES coach ON DELETE SET NULL,
     PRIMARY KEY(fk_sportsman_id,fk_doctor_id,fk_coach_id)
 );
 
 CREATE TABLE IF NOT EXISTS sportsman_sport(
-    fk_sportsman_id int REFERENCES sportsman,
-    fk_sport_id int REFERENCES sport,
+    fk_sportsman_id int REFERENCES sportsman ON DELETE CASCADE,
+    fk_sport_id int REFERENCES sport ON DELETE SET NULL,
     rate int DEFAULT 0,
-    fk_preparation_id int REFERENCES preparation,
+    fk_preparation_id int REFERENCES preparation ON DELETE SET NULL,
     PRIMARY KEY(fk_sportsman_id, fk_sport_id)
 );
 
 CREATE TABLE IF NOT EXISTS sportsman_competition(
-    fk_sportsman_id int REFERENCES sportsman,
-    fk_competition_id int REFERENCES competition,
-    fk_preparation_id int REFERENCES preparation,
+    fk_sportsman_id int REFERENCES sportsman ON DELETE CASCADE,
+    fk_competition_id int REFERENCES competition ON DELETE CASCADE,
+    fk_preparation_id int REFERENCES preparation ON DELETE SET NULL,
     rating_difference smallint DEFAULT 0,
     PRIMARY KEY(fk_sportsman_id, fk_competition_id)
 );
 
 CREATE TABLE IF NOT EXISTS baa_rate(
-     fk_baa_id int PRIMARY KEY REFERENCES baa,
+     fk_baa_id int PRIMARY KEY REFERENCES baa ON DELETE CASCADE,
      number_uses int DEFAULT 0,
      all_time_rate_difference int DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS preparation_rate(
-    fk_preparation_id int PRIMARY KEY REFERENCES preparation,
+    fk_preparation_id int PRIMARY KEY REFERENCES preparation ON DELETE CASCADE,
     effectiveness bigint DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS training_rate(
-    fk_training_id int PRIMARY KEY REFERENCES training,
+    fk_training_id int PRIMARY KEY REFERENCES training ON DELETE CASCADE,
     number_uses int DEFAULT 0,
     all_time_rate_difference int DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS preparation_baa(
-    fk_preparation_id int REFERENCES preparation,
-    fk_baa_id int REFERENCES baa,
+    fk_preparation_id int REFERENCES preparation ON DELETE CASCADE,
+    fk_baa_id int REFERENCES baa ON DELETE SET NULL,
     PRIMARY KEY(fk_preparation_id, fk_baa_id)
 );
 
 CREATE TABLE IF NOT EXISTS preparation_training(
-    fk_preparation_id int REFERENCES preparation,
-    fk_training_id int REFERENCES training,
+    fk_preparation_id int REFERENCES preparation ON DELETE CASCADE,
+    fk_training_id int REFERENCES training ON DELETE SET NULL,
     PRIMARY KEY(fk_preparation_id, fk_training_id)
 );
