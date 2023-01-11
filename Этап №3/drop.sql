@@ -18,6 +18,4 @@ DROP TABLE IF EXISTS preparation_rate CASCADE;
 DROP TABLE IF EXISTS training_rate CASCADE;
 DROP TABLE IF EXISTS preparation_baa CASCADE;
 DROP TABLE IF EXISTS preparation_training CASCADE;
-
-
--- DROP TYPE sex;
+DROP TYPE IF EXISTS sex;

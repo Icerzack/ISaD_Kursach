@@ -1,4 +1,11 @@
--- CREATE TYPE sex AS ENUM ('мужчина', 'женщина', 'другое');
+--create types
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'sex') THEN
+        CREATE TYPE sex AS ENUM ('мужчина', 'женщина', 'другое');
+    END IF;
+    --more types here...
+END$$;
 
 CREATE TABLE IF NOT EXISTS sport(
     sport_id serial PRIMARY KEY,
@@ -8,7 +15,7 @@ CREATE TABLE IF NOT EXISTS sport(
 CREATE TABLE IF NOT EXISTS competition(
     competition_id serial PRIMARY KEY,
     name varchar(100) NOT NULL,
-    fk_sport_id int REFERENCES sport NOT NULL ON DELETE SET NULL,
+    fk_sport_id int REFERENCES sport ON DELETE SET NULL,
     date_of_event date NOT NULL,
     place varchar(100) NOT NULL,
     prestige smallint CHECK (prestige >= 0 and prestige <= 100),
@@ -57,7 +64,7 @@ CREATE TABLE IF NOT EXISTS training(
 
 CREATE TABLE IF NOT EXISTS training_exercise(
     fk_training_id int REFERENCES training ON DELETE CASCADE,
-    fk_exercise_id int REFERENCES exercise ON DELETE SET NULL,
+    fk_exercise_id int REFERENCES exercise ON DELETE CASCADE,
     PRIMARY KEY(fk_training_id, fk_exercise_id)
 );
 
@@ -77,21 +84,21 @@ CREATE TABLE IF NOT EXISTS sportsman(
 
 CREATE TABLE IF NOT EXISTS sport_team_sport(
     fk_sport_team_id int REFERENCES sport_team ON DELETE CASCADE,
-    fk_sport_id int REFERENCES sport ON DELETE SET NULL,
-    fk_sportsman_id int REFERENCES sportsman ON DELETE SET NULL,
+    fk_sport_id int REFERENCES sport ON DELETE CASCADE,
+    fk_sportsman_id int REFERENCES sportsman ON DELETE CASCADE,
     PRIMARY KEY(fk_sport_team_id, fk_sport_id, fk_sportsman_id)
 );
 
 CREATE TABLE IF NOT EXISTS personnel(
     fk_sportsman_id int REFERENCES sportsman ON DELETE CASCADE,
-    fk_doctor_id int REFERENCES doctor ON DELETE SET NULL,
-    fk_coach_id int REFERENCES coach ON DELETE SET NULL,
+    fk_doctor_id int REFERENCES doctor ON DELETE CASCADE,
+    fk_coach_id int REFERENCES coach ON DELETE CASCADE,
     PRIMARY KEY(fk_sportsman_id,fk_doctor_id,fk_coach_id)
 );
 
 CREATE TABLE IF NOT EXISTS sportsman_sport(
     fk_sportsman_id int REFERENCES sportsman ON DELETE CASCADE,
-    fk_sport_id int REFERENCES sport ON DELETE SET NULL,
+    fk_sport_id int REFERENCES sport ON DELETE CASCADE,
     rate int DEFAULT 0,
     fk_preparation_id int REFERENCES preparation ON DELETE SET NULL,
     PRIMARY KEY(fk_sportsman_id, fk_sport_id)
@@ -124,12 +131,12 @@ CREATE TABLE IF NOT EXISTS training_rate(
 
 CREATE TABLE IF NOT EXISTS preparation_baa(
     fk_preparation_id int REFERENCES preparation ON DELETE CASCADE,
-    fk_baa_id int REFERENCES baa ON DELETE SET NULL,
+    fk_baa_id int REFERENCES baa ON DELETE CASCADE,
     PRIMARY KEY(fk_preparation_id, fk_baa_id)
 );
 
 CREATE TABLE IF NOT EXISTS preparation_training(
     fk_preparation_id int REFERENCES preparation ON DELETE CASCADE,
-    fk_training_id int REFERENCES training ON DELETE SET NULL,
+    fk_training_id int REFERENCES training ON DELETE CASCADE,
     PRIMARY KEY(fk_preparation_id, fk_training_id)
 );
