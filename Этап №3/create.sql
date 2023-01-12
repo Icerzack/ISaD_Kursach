@@ -82,6 +82,11 @@ CREATE TABLE IF NOT EXISTS sportsman(
     fk_sport_team_id int REFERENCES sport_team ON DELETE SET NULL
 );
 
+CREATE TABLE IF NOT EXISTS sportsman_password(
+    sportsman_id serial PRIMARY KEY,
+    password varchar(50) NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS sport_team_sport(
     fk_sport_team_id int REFERENCES sport_team ON DELETE CASCADE,
     fk_sport_id int REFERENCES sport ON DELETE CASCADE,

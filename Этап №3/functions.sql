@@ -9,7 +9,9 @@ BEGIN
     return query (select baa.baa_id, name, manufacturer, description, baa_rate.number_uses, baa_rate.all_time_rate_difference from baa
         join baa_rate on baa.baa_id = baa_rate.fk_baa_id order by baa_rate.all_time_rate_difference desc limit number);
     END IF;
-
+    EXCEPTION
+        WHEN duplicate_function THEN
+        NULL;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -25,6 +27,9 @@ BEGIN
     return query (select baa.baa_id, name, manufacturer, description, baa_rate.number_uses, baa_rate.all_time_rate_difference from baa
         join baa_rate on baa.baa_id = baa_rate.fk_baa_id order by baa_rate.number_uses desc limit number);
     END IF;
+    EXCEPTION
+        WHEN duplicate_function THEN
+        NULL;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -39,6 +44,9 @@ BEGIN
     return query (select training.training_id, training.name, training.description, training_rate.all_time_rate_difference from training
         join training_rate on training.training_id = training_rate.fk_training_id order by training_rate.all_time_rate_difference desc limit number);
     END IF;
+    EXCEPTION
+        WHEN duplicate_function THEN
+        NULL;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -53,6 +61,9 @@ BEGIN
     return query (select training.training_id, training.name, training.description, training_rate.number_uses from training
         join training_rate on training.training_id = training_rate.fk_training_id order by training_rate.number_uses desc limit number);
     END IF;
+    EXCEPTION
+        WHEN duplicate_function THEN
+        NULL;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -64,6 +75,9 @@ BEGIN
         join training_exercise on training.training_id = training_exercise.fk_training_id
         join exercise on training_exercise.fk_exercise_id = exercise.exercise_id
         WHERE training.training_id = train_id);
+    EXCEPTION
+        WHEN duplicate_function THEN
+        NULL;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -86,7 +100,9 @@ BEGIN
         join preparation_rate on preparation.preparation_id = preparation_rate.fk_preparation_id
         order by preparation_rate.effectiveness desc limit number);
     END IF;
-
+    EXCEPTION
+        WHEN duplicate_function THEN
+        NULL;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -99,6 +115,9 @@ BEGIN
         join baa on preparation.fk_baa_id = baa.baa_id
         join preparation_rate on preparation.preparation_id = preparation_rate.fk_preparation_id
         where preparation.preparation_id = prep_id);
+    EXCEPTION
+        WHEN duplicate_function THEN
+        NULL;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -110,6 +129,9 @@ BEGIN
         join sportsman_competition on sportsman_competition.fk_competition_id = competition.competition_id
         join sportsman on sportsman.sportsman_id = sportsman_competition.fk_sportsman_id and sportsman.sportsman_id = person_id
         join sport on competition.fk_sport_id = sport.sport_id );
+    EXCEPTION
+        WHEN duplicate_function THEN
+        NULL;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -128,6 +150,9 @@ BEGIN
         join sportsman_sport on sportsman.sportsman_id = sportsman_sport.fk_sportsman_id and sportsman_sport.fk_sport_id = sport_team.sport_team_id
         order by sportsman_sport.rate desc limit number);
     END IF;
+    EXCEPTION
+        WHEN duplicate_function THEN
+        NULL;
 END;
 $$ LANGUAGE plpgsql;
 SELECT * from GetTopSportsmenFromSportTeam(1, 3);
@@ -145,6 +170,9 @@ BEGIN
         join sport_team_sport on sport_team.sport_team_id = sport_team_sport.fk_sport_team_id and sport_team_sport.fk_sport_id = sportId
         order by sport_team.average_rate desc limit number);
     END IF;
+    EXCEPTION
+        WHEN duplicate_function THEN
+        NULL;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -157,5 +185,8 @@ BEGIN
         join sportsman_sport on sportsman.sportsman_id = sportsman_sport.fk_sportsman_id and sportsman.sportsman_id = sportsmanId
         join preparation on sportsman_sport.fk_preparation_id = preparation.preparation_id
         order by sportsman_sport.rate desc);
+    EXCEPTION
+        WHEN duplicate_function THEN
+        NULL;
 END;
 $$ LANGUAGE plpgsql;

@@ -183,6 +183,10 @@ VALUES
     ('Малон Иск', 'мужчина', '1985-09-12', 4),
     ('Мерилин Монор', 'женщина', '2000-08-25', 5);
 
+INSERT INTO sportsman_password(sportsman_id, password)
+VALUES
+    (1, 'lalala');
+
 INSERT INTO personnel(fk_sportsman_id, fk_doctor_id, fk_coach_id)
 VALUES
     (1,2,3),
