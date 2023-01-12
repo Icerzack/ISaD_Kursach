@@ -9,6 +9,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 import Logo from "./logo";
 
 const pages = [
@@ -37,26 +39,24 @@ function ResponsiveAppBar() {
     switch (event.currentTarget.getAttribute("name")) {
       case "Спортивные добавки":
         navigate("/sportsman/baa");
-        setCurrentPage("Спортивные добавки");
         setAnchorElNav(null);
         break;
       case "Упражнения":
         navigate("/sportsman/exercises");
-        setCurrentPage("Упражнения");
         setAnchorElNav(null);
         break;
       case "Тренировки":
         navigate("/sportsman/trainings");
-        setCurrentPage("Тренировки");
         setAnchorElNav(null);
         break;
       case "Подготовки":
         navigate("/sportsman/preparations");
-        setCurrentPage("Подготовки");
         setAnchorElNav(null);
         break;
       case "Профиль":
-        navigate("/sportsman/:id");
+        const id = localStorage.getItem("id");
+        const url = "/sportsman/" + id;
+        navigate(url);
         setCurrentPage("Профиль");
         setAnchorElNav(null);
         break;
@@ -69,7 +69,10 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ mr: "100px" }}>
+          <Box
+            sx={{ mr: "100px" }}
+            hidden={localStorage.getItem("id") === null ? "true" : "false"}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"

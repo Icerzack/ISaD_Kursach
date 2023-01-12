@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
 export default function DisplayCard(props) {
-  const { title, manufacturer, onCardClick, name } = props;
+  const { title, shortDescription, onCardClick, name } = props;
   return (
     <Card
       sx={{
@@ -30,7 +30,7 @@ export default function DisplayCard(props) {
               WebkitLineClamp: 3,
             }}
           >
-            {manufacturer}
+            {shortDescription}
           </Typography>
         </CardContent>
       </CardActionArea>

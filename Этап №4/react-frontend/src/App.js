@@ -1,24 +1,21 @@
-import logo from "./logo.svg";
-import "./App.css";
 import TopAppBar from "./components/top-bar";
 import { Outlet } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
-
-const temp = () => {
-  // GET request for remote image in node.js
-  axios({
-    method: "get",
-    url: "http://localhost:32456/get",
-  }).then(function (response) {
-    console.log(response);
-  });
-};
+import { useNavigate } from "react-router-dom";
 
 function App() {
+  const navigate = useNavigate();
   useEffect(() => {
-    temp();
+    if (localStorage.getItem("id") === null) {
+      navigate("/login");
+    } else {
+      const id = localStorage.getItem("id");
+      const url = "/sportsman/" + id;
+      navigate(url);
+    }
   }, []);
+
   return (
     <div>
       <div className="App">

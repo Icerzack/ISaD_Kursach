@@ -169,7 +169,7 @@ export default function Baa(props) {
                   name={element.id}
                   title={element.name}
                   onCardClick={handleCardClicked}
-                  manufacturer={element.manufacturer}
+                  shortDescription={element.manufacturer}
                 ></DisplayCard>
               ))}
             </Box>

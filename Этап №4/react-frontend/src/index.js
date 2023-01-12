@@ -9,45 +9,50 @@ import Profile from "./pages/Profile/Profile";
 import Baa from "./pages/Baa/Baa";
 import BaaView from "./pages/Baa/BaaView";
 import Login from "./pages/Login-Register/Login";
+import Register from "./pages/Login-Register/Register";
 import Trainings from "./pages/Trainings/Trainings";
 import Exercises from "./pages/Exercises/Exercises";
 import Preparations from "./pages/Preparations/Preparations";
 
 const router = createBrowserRouter([
   {
-    path: "/sportsman",
+    path: "/",
     element: <App></App>,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "baa",
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/sportsman/baa",
         element: <Baa></Baa>,
       },
       {
-        path: "baa/:id",
+        path: "/sportsman/baa/:id",
         element: <BaaView></BaaView>,
       },
       {
-        path: ":id",
+        path: "/sportsman/:id",
         element: <Profile></Profile>,
       },
       {
-        path: "trainings",
+        path: "/sportsman/trainings",
         element: <Trainings></Trainings>,
       },
       {
-        path: "exercises",
+        path: "/sportsman/exercises",
         element: <Exercises></Exercises>,
       },
       {
-        path: "preparations",
+        path: "/sportsman/preparations",
         element: <Preparations></Preparations>,
       },
     ],
-  },
-  {
-    path: "/login",
-    element: <Login></Login>,
   },
 ]);
 

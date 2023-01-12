@@ -7,10 +7,8 @@ export default function Logo() {
   return (
     <Stack
       direction="row"
-      spacing={2}
       sx={{
         display: "flex",
-        mr: 1,
         justifyContent: "center",
         alignItems: "center",
       }}
@@ -18,7 +16,6 @@ export default function Logo() {
       <Typography
         variant="h6"
         sx={{
-          mr: 2,
           display: "flex",
           fontFamily: "monospace",
           fontWeight: 700,

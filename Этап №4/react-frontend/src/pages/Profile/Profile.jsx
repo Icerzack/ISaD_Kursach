@@ -4,68 +4,157 @@ import Grid from "@mui/material/Unstable_Grid2";
 import TextField from "@mui/material/TextField";
 import { Stack } from "@mui/system";
 import Button from "@mui/material/Button";
-import Logo from "../../components/logo";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import dayjs from "dayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+import { useParams } from "react-router-dom";
 
 export default function Profile() {
-  const [login, setLogin] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [birthDate, setBirthDate] = React.useState(dayjs("2022-01-12"));
+  const [sex, setSex] = React.useState("");
 
-  const handleLoginInput = (event) => {
-    setLogin(event.currentTarget.value);
-  };
+  let h = window.innerHeight;
+  let gridHeight = h - 60;
 
-  const handlePasswordInput = (event) => {
-    setPassword(event.currentTarget.value);
-  };
+  function DatePicker() {
+    const handleChange = (newValue) => {
+      setBirthDate(newValue);
+    };
 
-  const handleButtonClick = (event) => {
-    //TODO: Делаем запрос
-  };
+    return (
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DesktopDatePicker
+          label="Date desktop"
+          inputFormat="MM/DD/YYYY"
+          value={birthDate}
+          onChange={handleChange}
+          renderInput={(params) => <TextField {...params} />}
+        />
+      </LocalizationProvider>
+    );
+  }
+
+  function SexSelect() {
+    const handleChange = (event) => {
+      setSex(event.target.value);
+    };
+
+    return (
+      <Box minWidth="200px">
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Sex</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={sex}
+            label="Age"
+            onChange={handleChange}
+          >
+            <MenuItem value={"Male"}>Male</MenuItem>
+            <MenuItem value={"Female"}>Female</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
+    );
+  }
+
+  const handleButtonClick = (event) => {};
 
   return (
-    <Grid
-      container
-      spacing={0}
-      direction="column"
-      alignItems="center"
-      justifyContent="center"
-      textAlign="center"
-      style={{ minHeight: "100vh" }}
-    >
-      <Grid item xs={3}>
-        <Paper elevation={4}>
-          <Stack
+    <Box sx={{ height: gridHeight }}>
+      <Grid
+        container
+        direction="row"
+        alignItems="center"
+        justifyContent="center"
+        sx={{ height: "100%", p: "10px" }}
+      >
+        <Grid xs={12} md={6} sx={{ height: "100%", p: "10px" }}>
+          <Paper
+            elevation={3}
             sx={{
-              p: 5,
+              height: "100%",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}
-            direction="column"
-            spacing={2}
           >
-            <Logo />
-            <TextField
-              id="outlined-basic"
-              label="Login"
-              variant="outlined"
-              onChange={handleLoginInput}
-            />
-            <TextField
-              id="outlined-basic"
-              label="Password"
-              variant="outlined"
-              onChange={handlePasswordInput}
-            />
-            <Button variant="contained" onClick={handleButtonClick}>
-              Войти!
-            </Button>
-            <Button variant="text" onClick={handleButtonClick} size="small">
-              Зарегистрироваться
-            </Button>
-          </Stack>
-        </Paper>
+            <Stack
+              direction="column"
+              sx={{
+                height: "100%",
+                width: "100%",
+                p: "20px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Grid
+                container
+                direction="row"
+                alignItems="center"
+                justifyContent="center"
+                sx={{ height: "100%", width: "100%", p: "20px" }}
+              >
+                <Grid
+                  xs={6}
+                  sx={{
+                    height: "100%",
+                    p: "20px",
+                    textAlign: "center",
+                    display: "flex",
+                    flexWrap: "wrap",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <TextField
+                    id="outlined-basic"
+                    label="Outlined"
+                    variant="outlined"
+                    fullWidth
+                  />
+                  <SexSelect />
+                  <DatePicker></DatePicker>
+                </Grid>
+                <Grid
+                  xs={6}
+                  sx={{
+                    height: "100%",
+                    p: "20px",
+                    textAlign: "center",
+                    display: "flex",
+                    flexWrap: "wrap",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <div>Это ваши Имя + Фамилия</div>
+                  <div>Это ваш пол</div>
+                  <div>Это ваша дата рождения</div>
+                </Grid>
+              </Grid>
+              <Button
+                variant="contained"
+                sx={{ mb: 5 }}
+                onClick={handleButtonClick}
+              >
+                Обновить данные
+              </Button>
+            </Stack>
+          </Paper>
+        </Grid>
+        <Grid xs={12} md={6} sx={{ height: "100%", p: "10px" }}>
+          <Paper elevation={3} sx={{ height: "100%" }}></Paper>
+        </Grid>
       </Grid>
-    </Grid>
+    </Box>
   );
 }

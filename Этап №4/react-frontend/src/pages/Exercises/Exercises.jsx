@@ -7,7 +7,6 @@ import { Paper, TextField } from "@mui/material";
 import { Stack } from "@mui/system";
 import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
-import { baaList } from "../../helpers/baa";
 import { useEffect } from "react";
 
 const WhiteBorderTextField = styled(TextField)`
@@ -32,7 +31,7 @@ export default function Baa(props) {
   let gridHeight = h - 60;
 
   useEffect(() => {
-    setDisplayList(baaList);
+    // setDisplayList(baaList);
   }, []);
 
   const filteredList = diplayList.filter((item) => {
@@ -148,7 +147,7 @@ export default function Baa(props) {
                   name={element.id}
                   title={element.name}
                   onCardClick={handleCardClicked}
-                  manufacturer={element.manufacturer}
+                  shortDescription={element.manufacturer}
                 ></DisplayCard>
               ))}
             </Box>
