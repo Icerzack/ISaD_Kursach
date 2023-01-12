@@ -135,27 +135,27 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION GetTopSportsmenFromSportTeam(sportTeam_id integer, number integer)
-RETURNS TABLE(sport_team_id int, sport_team_name varchar(50), sportsman_id int, sportsman_full_name varchar(100), sportsman_sex sex, sportsman_date_of_birth date, sportsman_rate int)
-AS $$
-BEGIN
-    IF number = 0 THEN
-    return query (select sport_team.sport_team_id, sport_team.name, sportsman.sportsman_id, sportsman.full_name, sportsman.sex, sportsman.date_of_birth, sportsman_sport.rate from sportsman
-        join sport_team on sportsman.fk_sport_team_id = sport_team.sport_team_id and sport_team.sport_team_id = sportTeam_id
-        join sportsman_sport on sportsman.sportsman_id = sportsman_sport.fk_sportsman_id and sportsman_sport.fk_sport_id = sport_team.sport_team_id
-        order by sportsman_sport.rate desc);
-    ELSE
-    return query (select sport_team.sport_team_id, sport_team.name, sportsman.sportsman_id, sportsman.full_name, sportsman.sex, sportsman.date_of_birth, sportsman_sport.rate from sportsman
-        join sport_team on sportsman.fk_sport_team_id = sport_team.sport_team_id and sport_team.sport_team_id = sportTeam_id
-        join sportsman_sport on sportsman.sportsman_id = sportsman_sport.fk_sportsman_id and sportsman_sport.fk_sport_id = sport_team.sport_team_id
-        order by sportsman_sport.rate desc limit number);
-    END IF;
-    EXCEPTION
-        WHEN duplicate_function THEN
-        NULL;
-END;
-$$ LANGUAGE plpgsql;
-SELECT * from GetTopSportsmenFromSportTeam(1, 3);
+-- CREATE OR REPLACE FUNCTION GetTopSportsmenFromSportTeam(sportTeam_id integer, number integer)
+-- RETURNS TABLE(sport_team_id int, sport_team_name varchar(50), sportsman_id int, sportsman_full_name varchar(100), sportsman_sex sex, sportsman_date_of_birth date, sportsman_rate int)
+-- AS $$
+-- BEGIN
+--     IF number = 0 THEN
+--     return query (select sport_team.sport_team_id, sport_team.name, sportsman.sportsman_id, sportsman.full_name, sportsman.sex, sportsman.date_of_birth, sportsman_sport.rate from sportsman
+--         join sport_team on sportsman.fk_sport_team_id = sport_team.sport_team_id and sport_team.sport_team_id = sportTeam_id
+--         join sportsman_sport on sportsman.sportsman_id = sportsman_sport.fk_sportsman_id and sportsman_sport.fk_sport_id = sport_team.sport_team_id
+--         order by sportsman_sport.rate desc);
+--     ELSE
+--     return query (select sport_team.sport_team_id, sport_team.name, sportsman.sportsman_id, sportsman.full_name, sportsman.sex, sportsman.date_of_birth, sportsman_sport.rate from sportsman
+--         join sport_team on sportsman.fk_sport_team_id = sport_team.sport_team_id and sport_team.sport_team_id = sportTeam_id
+--         join sportsman_sport on sportsman.sportsman_id = sportsman_sport.fk_sportsman_id and sportsman_sport.fk_sport_id = sport_team.sport_team_id
+--         order by sportsman_sport.rate desc limit number);
+--     END IF;
+--     EXCEPTION
+--         WHEN duplicate_function THEN
+--         NULL;
+-- END;
+-- $$ LANGUAGE plpgsql;
+-- SELECT * from GetTopSportsmenFromSportTeam(1, 3);
 
 CREATE OR REPLACE FUNCTION GetTopSportTeams(sportId integer, number integer)
 RETURNS TABLE(sport_id int, sport_team_id int, sport_team_name varchar(50), sport_team_rate double precision)

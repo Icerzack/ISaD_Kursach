@@ -50,9 +50,7 @@ def get_baa():
         if(request.method == 'GET'):
             request_data = request.args
         elif(request.method == 'POST'):
-            print("adsa")
             request_data = request.get_json()
-            print(request_data)
         else:
             request_data = dict()
             
@@ -107,41 +105,77 @@ def get_baa():
     except Exception as e:
         return abort(500, e)
 
-@app.route('/exchange', methods=['POST'])
-def exchange():
-    test_data = request.get_json()
-    print(test_data)
-    my_data = {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6}
-    return jsonify(my_data)
+@app.route('/get/baa/<baa_id>', methods=['GET'])
+def get_by_baa_id(baa_id):
+    try:
+        if(request.method != 'GET'):
+            return abort(500, 'Request not found')
+        cursor.execute("SELECT * FROM GetTopBAAsByRating({count}) WHERE baa_id = {baa_id}; ".format(count=0, baa_id=baa_id))    
+        baa = cursor.fetchall()
+        response_data = list()
+        for id, name, manufacturer, description, uses, all_time_rate_difference in baa:
+            response_data.append({
+                'id': id,
+                'name': name,
+                'manufacturer': manufacturer,
+                'description': description,
+                'uses': uses,
+                'allTimeRateDifference': all_time_rate_difference
+            })
+        print(response_data)
+        response = dict()
+        response['body'] = response_data
+        if(response):
+                return make_response(jsonify(response), 200, {'Content-Type': 'application/json'})
+        else:
+            return abort(500, 'Request not found') 
+    except Exception as e:
+        return abort(501, e)
 
-@app.route('/profile/<username>', methods=['GET'])
-def profile(username):
-    return f'Профиль пользователя: {username}'
 
-
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['GET'])
 def login():
-    content = request.json
-    username = content.get('username')
-    password = content.get('password')
-    # TODO get username_db and hash_password from DB
-    # if username == username_db and check_password_hash(hash_password, password): # registered
-    if username and username == 'me' and password == '12':
-        return make_response(jsonify(status_code='ok'), 200, {'Content-Type': 'application/json'})
-    else:
-        return make_response(jsonify(status_code='error'), 401, {'Content-Type': 'application/json'})
-       
-@app.route('/register', methods=['POST'])
-def register():
-    content = request.json
-    username = content.get('username')
-    password = content.get('password')
-    if username and password:
+    try:
+        content = request.args
+        username = content.get('username')
+        password = content.get('password')
+        if not username or not password:
+            return abort(500, 'Request not found')
+        
         hash_password = generate_password_hash(password)
-        # TODO send username and hash_password to DB
-        return make_response(jsonify(status_code='ok'), 200, {'Content-Type': 'application/json'})
-    else:
-        return make_response(jsonify(status_code='error'), 404, {'Content-Type': 'application/json'})       
+        cursor.execute("SELECT COUNT(*) FROM login_password WHERE login = {login} and password = {hash_passsword}; ".format(login=login, hash_passsword=hash_password))
+        result=cursor.fetchone()
+        if result == 1:
+            return make_response(jsonify(status_code='ok'), 200, {'Content-Type': 'application/json'})
+        else:
+            return make_response(jsonify(status_code='error'), 401, {'Content-Type': 'application/json'})
+    except Exception as e:
+        return abort(500, e)
+       
+# @app.route('/register', methods=['POST'])
+# def register():
+#     content = request.json
+#     username = content.get('username')
+#     password = content.get('password')
+#     full_name = content.get('full_name')
+#     sex = content.get('sex')
+#     date_of_birth = content.get('date_of_birth')
+#     fk_sport_team_id = content.get('fk_sport_team_id')
+#     if username and password and full_name and sex and date_of_birth:
+#         hash_password = generate_password_hash(password)
+#         query = """
+#             INSERT INTO sportsman(full_name, sex, date_of_birth, fk_sport_team_id)
+#             VALUES (%s, %s, %s, %s);
+#             INSERT INTO login_password(login, password)
+#             VALUES (%s, %s);
+#             INSERT INTO sportsman_login(sportsman_id, login)
+#             VALUES (%s, %s);
+#         """
+#         cursor.execute(query, (full_name, sex, date_of_birth, fk_sport_team_id, login, hash_password, sports))
+#             INSERT into login_password VALUES () ; ".format(login=login, hash_passsword=hash_password))
+#         return make_response(jsonify(status_code='ok'), 200, {'Content-Type': 'application/json'})
+#     else:
+#         return make_response(jsonify(status_code='error'), 404, {'Content-Type': 'application/json'})       
  
 @app.route('/transfer')
 def transfer():
@@ -257,12 +291,15 @@ def prepare_functions():
                 return query (select baa.baa_id, name, manufacturer, description, baa_rate.number_uses, baa_rate.all_time_rate_difference from baa
                     join baa_rate on baa.baa_id = baa_rate.fk_baa_id order by baa_rate.all_time_rate_difference desc limit number);
                 END IF;
+                EXCEPTION
+                    WHEN duplicate_function THEN
+                    NULL;
             END;
             $$ LANGUAGE plpgsql;
         """,
         """
             CREATE OR REPLACE FUNCTION GetTopBAAsByUses(number integer)
-            RETURNS TABLE(baa_id integer, baa_name varchar(100), baa_manufacturer varchar(50), baa_description text, baa_uses int, baa_rate int)
+            RETURNS TABLE(baa_id integer, baa_name varchar(100), baa_manufacturer varchar(50), baa_description text, baa_uses int, baa_all_time_rate_difference int)
             AS $$
             BEGIN
                 IF number = 0 then
@@ -272,6 +309,9 @@ def prepare_functions():
                 return query (select baa.baa_id, name, manufacturer, description, baa_rate.number_uses, baa_rate.all_time_rate_difference from baa
                     join baa_rate on baa.baa_id = baa_rate.fk_baa_id order by baa_rate.number_uses desc limit number);
                 END IF;
+                EXCEPTION
+                    WHEN duplicate_function THEN
+                    NULL;
             END;
             $$ LANGUAGE plpgsql;
         """,
@@ -287,6 +327,9 @@ def prepare_functions():
                 return query (select training.training_id, training.name, training.description, training_rate.all_time_rate_difference from training
                     join training_rate on training.training_id = training_rate.fk_training_id order by training_rate.all_time_rate_difference desc limit number);
                 END IF;
+                EXCEPTION
+                    WHEN duplicate_function THEN
+                    NULL;
             END;
             $$ LANGUAGE plpgsql;
         """,
@@ -302,6 +345,9 @@ def prepare_functions():
                 return query (select training.training_id, training.name, training.description, training_rate.number_uses from training
                     join training_rate on training.training_id = training_rate.fk_training_id order by training_rate.number_uses desc limit number);
                 END IF;
+                EXCEPTION
+                    WHEN duplicate_function THEN
+                    NULL;
             END;
             $$ LANGUAGE plpgsql;
         """,
@@ -314,6 +360,9 @@ def prepare_functions():
                     join training_exercise on training.training_id = training_exercise.fk_training_id
                     join exercise on training_exercise.fk_exercise_id = exercise.exercise_id
                     WHERE training.training_id = train_id);
+                EXCEPTION
+                    WHEN duplicate_function THEN
+                    NULL;
             END;
             $$ LANGUAGE plpgsql;
         """,
@@ -337,6 +386,9 @@ def prepare_functions():
                     join preparation_rate on preparation.preparation_id = preparation_rate.fk_preparation_id
                     order by preparation_rate.effectiveness desc limit number);
                 END IF;
+                EXCEPTION
+                    WHEN duplicate_function THEN
+                    NULL;
             END;
             $$ LANGUAGE plpgsql;
         """,
@@ -350,6 +402,9 @@ def prepare_functions():
                     join baa on preparation.fk_baa_id = baa.baa_id
                     join preparation_rate on preparation.preparation_id = preparation_rate.fk_preparation_id
                     where preparation.preparation_id = prep_id);
+                EXCEPTION
+                    WHEN duplicate_function THEN
+                    NULL;
             END;
             $$ LANGUAGE plpgsql;
         """,
@@ -362,6 +417,9 @@ def prepare_functions():
                     join sportsman_competition on sportsman_competition.fk_competition_id = competition.competition_id
                     join sportsman on sportsman.sportsman_id = sportsman_competition.fk_sportsman_id and sportsman.sportsman_id = person_id
                     join sport on competition.fk_sport_id = sport.sport_id );
+                EXCEPTION
+                    WHEN duplicate_function THEN
+                    NULL;
             END;
             $$ LANGUAGE plpgsql;
         """,
@@ -379,20 +437,26 @@ def prepare_functions():
                     join sport_team_sport on sport_team.sport_team_id = sport_team_sport.fk_sport_team_id and sport_team_sport.fk_sport_id = sportId
                     order by sport_team.average_rate desc limit number);
                 END IF;
+                EXCEPTION
+                    WHEN duplicate_function THEN
+                    NULL;
             END;
             $$ LANGUAGE plpgsql;
         """,
         """
-            CREATE OR REPLACE FUNCTION GetCurrentPreparationsForSportsman(sportsmanId integer)
-            RETURNS TABLE(sportsman_id int, sportsman_full_name int, sportsman_sex varchar(50), sportsman_date_of_birth date, sportsman_rate double precision, preparation_id int)
-            AS $$
-            BEGIN
-                return query (select sportsman.sportsman_id, sportsman.full_name, sportsman.sex, sportsman.date_of_birth, sportsman_sport.rate, preparation.preparation_id from sportsman
-                    join sportsman_sport on sportsman.sportsman_id = sportsman_sport.fk_sportsman_id and sportsman.sportsman_id = sportsmanId
-                    join preparation on sportsman_sport.fk_preparation_id = preparation.preparation_id
-                    order by sportsman_sport.rate desc);
-            END;
-            $$ LANGUAGE plpgsql;
+        CREATE OR REPLACE FUNCTION GetCurrentPreparationsForSportsman(sportsmanId integer)
+        RETURNS TABLE(sportsman_id int, sportsman_full_name int, sportsman_sex varchar(50), sportsman_date_of_birth date, sportsman_rate double precision, preparation_id int)
+        AS $$
+        BEGIN
+            return query (select sportsman.sportsman_id, sportsman.full_name, sportsman.sex, sportsman.date_of_birth, sportsman_sport.rate, preparation.preparation_id from sportsman
+                join sportsman_sport on sportsman.sportsman_id = sportsman_sport.fk_sportsman_id and sportsman.sportsman_id = sportsmanId
+                join preparation on sportsman_sport.fk_preparation_id = preparation.preparation_id
+                order by sportsman_sport.rate desc);
+            EXCEPTION
+                WHEN duplicate_function THEN
+                NULL;
+        END;
+        $$ LANGUAGE plpgsql;
         """
     ]
     for postgresql_func in postgresql_funcs:
