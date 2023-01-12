@@ -1,12 +1,12 @@
 CREATE OR REPLACE FUNCTION GetTopBAAsByRating(number integer)
-RETURNS TABLE(baa_id integer, baa_name varchar(100), baa_manufacturer varchar(50), baa_description text, baa_rate int)
+RETURNS TABLE(baa_id integer, baa_name varchar(100), baa_manufacturer varchar(50), baa_description text, baa_uses int, baa_rate int)
 AS $$
 BEGIN
     IF number = 0 then
-    return query (select baa.baa_id, name, manufacturer, description, baa_rate.all_time_rate_difference from baa
+    return query (select baa.baa_id, name, manufacturer, description, baa_rate.number_uses, baa_rate.all_time_rate_difference from baa
         join baa_rate on baa.baa_id = baa_rate.fk_baa_id order by baa_rate.all_time_rate_difference desc);
     ELSE
-    return query (select baa.baa_id, name, manufacturer, description, baa_rate.all_time_rate_difference from baa
+    return query (select baa.baa_id, name, manufacturer, description, baa_rate.number_uses, baa_rate.all_time_rate_difference from baa
         join baa_rate on baa.baa_id = baa_rate.fk_baa_id order by baa_rate.all_time_rate_difference desc limit number);
     END IF;
 
@@ -15,14 +15,14 @@ $$ LANGUAGE plpgsql;
 
 
 CREATE OR REPLACE FUNCTION GetTopBAAsByUses(number integer)
-RETURNS TABLE(baa_id integer, baa_name varchar(100), baa_manufacturer varchar(50), baa_description text, baa_uses int)
+RETURNS TABLE(baa_id integer, baa_name varchar(100), baa_manufacturer varchar(50), baa_description text, baa_uses int, baa_all_time_rate_difference int)
 AS $$
 BEGIN
     IF number = 0 then
-    return query (select baa.baa_id, name, manufacturer, description, baa_rate.number_uses from baa
+    return query (select baa.baa_id, name, manufacturer, description, baa_rate.number_uses, baa_rate.all_time_rate_difference from baa
         join baa_rate on baa.baa_id = baa_rate.fk_baa_id order by baa_rate.number_uses desc);
     ELSE
-    return query (select baa.baa_id, name, manufacturer, description, baa_rate.number_uses from baa
+    return query (select baa.baa_id, name, manufacturer, description, baa_rate.number_uses, baa_rate.all_time_rate_difference from baa
         join baa_rate on baa.baa_id = baa_rate.fk_baa_id order by baa_rate.number_uses desc limit number);
     END IF;
 END;
@@ -113,9 +113,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-drop function getcompetitionsforsportsman(person_id integer);
-select * from getcompetitionsforsportsman(1);
-
 CREATE OR REPLACE FUNCTION GetTopSportsmenFromSportTeam(sportTeam_id integer, number integer)
 RETURNS TABLE(sport_team_id int, sport_team_name varchar(50), sportsman_id int, sportsman_full_name varchar(100), sportsman_sex sex, sportsman_date_of_birth date, sportsman_rate int)
 AS $$
@@ -133,7 +130,7 @@ BEGIN
     END IF;
 END;
 $$ LANGUAGE plpgsql;
-
+SELECT * from GetTopSportsmenFromSportTeam(1, 3);
 
 CREATE OR REPLACE FUNCTION GetTopSportTeams(sportId integer, number integer)
 RETURNS TABLE(sport_id int, sport_team_id int, sport_team_name varchar(50), sport_team_rate double precision)
@@ -153,7 +150,7 @@ $$ LANGUAGE plpgsql;
 
 
 CREATE OR REPLACE FUNCTION GetCurrentPreparationsForSportsman(sportsmanId integer)
-RETURNS TABLE(sportsman_id int, sportsman_full_name int, sportsman_sex varchar(50), sportsman_date_of_birth, sportsman_rate double precision, preparation_id int)
+RETURNS TABLE(sportsman_id int, sportsman_full_name int, sportsman_sex varchar(50), sportsman_date_of_birth date, sportsman_rate double precision, preparation_id int)
 AS $$
 BEGIN
     return query (select sportsman.sportsman_id, sportsman.full_name, sportsman.sex, sportsman.date_of_birth, sportsman_sport.rate, preparation.preparation_id from sportsman
