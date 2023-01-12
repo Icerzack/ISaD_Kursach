@@ -63,7 +63,7 @@ export default function Baa(props) {
       method: "get",
       url: "http://localhost:32456/get/baa",
     }).then(function (response) {
-      console.log(response);
+      setDisplayList(response.data.body)
     });
     //TODO: Делаем реквест
   };

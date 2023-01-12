@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 import { baaList } from "../../helpers/baa";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 
 export default function BaaView(props) {
   const { id } = useParams();
@@ -13,24 +15,31 @@ export default function BaaView(props) {
   const [title, setTitle] = React.useState("");
   let [manufacturer, setManufacturer] = React.useState("");
   let [description, setDescription] = React.useState("");
+  let [uses, setUses] = React.useState("");
+  let [allTimeRatingDifference, setAllTimeRatingDifference] = React.useState("");
   const navigate = useNavigate();
 
   const list = baaList;
 
   useEffect(() => {
-    let found = false;
-    for (let i = 0; i < list.length; i++) {
-      let el = list[i];
-      if (el.id === Number(id)) {
-        found = true;
-        setTitle(el.name);
-        setManufacturer(el.manufacturer);
-        setDescription(el.description);
+    const url = "http://localhost:32456/get/baa/"+id;
+    axios({
+      method: "get",
+      url: url,
+    }).then(function (response) {
+      let temp = response.data.body
+      setTitle(temp[0].name)
+      setDescription(temp[0].description)
+      setManufacturer(temp[0].manufacturer)
+      setUses(temp[0].uses)
+      setAllTimeRatingDifference(temp[0].all_time_rating_difference)
+    }).catch(function (error) {
+      if (error.response) {
+        navigate("/sportsman/baa")
       }
-    }
-    if (!found) {
-      navigate("/sportsman/baa");
-    }
+    });
+
+
   }, []);
 
   let h = window.innerHeight;
@@ -70,6 +79,8 @@ export default function BaaView(props) {
             <h1>{title}</h1>
             <h3>{manufacturer}</h3>
             <h6>{description}</h6>
+            <h3>{uses}</h3>
+            <h6>{allTimeRatingDifference}</h6>
           </Stack>
         </Paper>
       </Box>
