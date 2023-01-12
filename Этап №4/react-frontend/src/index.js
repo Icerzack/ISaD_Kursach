@@ -12,7 +12,6 @@ import Login from "./pages/Login-Register/Login";
 import Register from "./pages/Login-Register/Register";
 import Trainings from "./pages/Trainings/Trainings";
 import TrainingView from "./pages/Trainings/TrainingView";
-import Exercises from "./pages/Exercises/Exercises";
 import Preparations from "./pages/Preparations/Preparations";
 
 const router = createBrowserRouter([
@@ -48,10 +47,6 @@ const router = createBrowserRouter([
       {
         path: "/sportsman/trainings/:id",
         element: <TrainingView></TrainingView>,
-      },
-      {
-        path: "/sportsman/exercises",
-        element: <Exercises></Exercises>,
       },
       {
         path: "/sportsman/preparations",

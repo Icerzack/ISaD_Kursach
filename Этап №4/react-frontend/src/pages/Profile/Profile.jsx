@@ -14,57 +14,48 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { useParams } from "react-router-dom";
+import { preparationsList } from "../../helpers/preparations";
+import { baaList } from "../../helpers/baa";
 
 export default function Profile() {
   const [birthDate, setBirthDate] = React.useState(dayjs("2022-01-12"));
   const [sex, setSex] = React.useState("");
+  const [dataToDisplay, setDataToDisplay] = React.useState([]);
 
   let h = window.innerHeight;
   let gridHeight = h - 60;
 
-  function DatePicker() {
-    const handleChange = (newValue) => {
-      setBirthDate(newValue);
-    };
+  const handleButtonPreparationClick = (event) => {
+    // const url = "http://localhost:32456/sportsman/" + id + "/preparation";
+    // axios({
+    //   method: "get",
+    //   url: url,
+    // })
+    //   .then(function (response) {
+    //     let temp = response.data.body;
+    //     setPreparations(temp);
+    //   })
+    //   .catch(function (error) {
+    //     navigate("/sportsman/" + id);
+    //   });
+    setDataToDisplay(preparationsList);
+  };
 
-    return (
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DesktopDatePicker
-          label="Date desktop"
-          inputFormat="MM/DD/YYYY"
-          value={birthDate}
-          onChange={handleChange}
-          renderInput={(params) => <TextField {...params} />}
-        />
-      </LocalizationProvider>
-    );
-  }
-
-  function SexSelect() {
-    const handleChange = (event) => {
-      setSex(event.target.value);
-    };
-
-    return (
-      <Box minWidth="200px">
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Sex</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={sex}
-            label="Age"
-            onChange={handleChange}
-          >
-            <MenuItem value={"Male"}>Male</MenuItem>
-            <MenuItem value={"Female"}>Female</MenuItem>
-          </Select>
-        </FormControl>
-      </Box>
-    );
-  }
-
-  const handleButtonClick = (event) => {};
+  const handleButtonBaaClick = (event) => {
+    // const url = "http://localhost:32456/sportsman/" + id + "/baa";
+    // axios({
+    //   method: "get",
+    //   url: url,
+    // })
+    //   .then(function (response) {
+    //     let temp = response.data.body;
+    //     setPreparations(temp);
+    //   })
+    //   .catch(function (error) {
+    //     navigate("/sportsman/" + id);
+    //   });
+    setDataToDisplay(baaList);
+  };
 
   return (
     <Box sx={{ height: gridHeight }}>
@@ -115,14 +106,13 @@ export default function Profile() {
                     alignItems: "center",
                   }}
                 >
-                  <TextField
-                    id="outlined-basic"
-                    label="Outlined"
-                    variant="outlined"
-                    fullWidth
-                  />
-                  <SexSelect />
-                  <DatePicker></DatePicker>
+                  <Button
+                    variant="contained"
+                    sx={{ mb: 5 }}
+                    onClick={handleButtonBaaClick}
+                  >
+                    Получить мои BAA
+                  </Button>
                 </Grid>
                 <Grid
                   xs={6}
@@ -136,23 +126,41 @@ export default function Profile() {
                     alignItems: "center",
                   }}
                 >
-                  <div>Это ваши Имя + Фамилия</div>
-                  <div>Это ваш пол</div>
-                  <div>Это ваша дата рождения</div>
+                  <Button
+                    variant="contained"
+                    sx={{ mb: 5 }}
+                    onClick={handleButtonPreparationClick}
+                  >
+                    Получить мои подготовки
+                  </Button>
                 </Grid>
               </Grid>
-              <Button
-                variant="contained"
-                sx={{ mb: 5 }}
-                onClick={handleButtonClick}
-              >
-                Обновить данные
-              </Button>
             </Stack>
           </Paper>
         </Grid>
         <Grid xs={12} md={6} sx={{ height: "100%", p: "10px" }}>
-          <Paper elevation={3} sx={{ height: "100%" }}></Paper>
+          <Paper elevation={3} sx={{ height: "100%" }}>
+            <Box
+              sx={{
+                height: "100%",
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "space-between",
+                backgroundColor: "rgba(0,0,0,0)",
+                overflow: "auto",
+              }}
+            >
+              {dataToDisplay.map((element) => (
+                <DisplayCard
+                  key={element.id}
+                  name={element.id}
+                  title={element.name}
+                  onCardClick={handleCardClicked}
+                  shortDescription={element.description}
+                ></DisplayCard>
+              ))}
+            </Box>
+          </Paper>
         </Grid>
       </Grid>
     </Box>

@@ -13,13 +13,7 @@ import { useEffect } from "react";
 
 import Logo from "./logo";
 
-const pages = [
-  "Спортивные добавки",
-  "Упражнения",
-  "Тренировки",
-  "Подготовки",
-  "Профиль",
-];
+const pages = ["Спортивные добавки", "Упражнения", "Подготовки", "Профиль"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -39,10 +33,6 @@ function ResponsiveAppBar() {
     switch (event.currentTarget.getAttribute("name")) {
       case "Спортивные добавки":
         navigate("/sportsman/baa");
-        setAnchorElNav(null);
-        break;
-      case "Упражнения":
-        navigate("/sportsman/exercises");
         setAnchorElNav(null);
         break;
       case "Тренировки":

@@ -1,59 +1,22 @@
 export const baaList = [
   {
     id: 1,
-    name: "Tim",
-    manufacturer: "Icerzack",
-    description:
-      "klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1",
-    uses: "111",
-    allTimeRatingDifference: "222",
+    name: "Baa infinite",
+    description: "Amazing, love it!",
   },
   {
     id: 2,
-    name: "Dan",
-    manufacturer: "Belogaev",
-    description: "klsjadfl2",
+    name: "Danisk",
+    description: "Amesome food",
   },
   {
     id: 3,
     name: "Schmidt",
-    manufacturer: "Schmalz",
-    description: "klsjadfl3",
+    description: "Tree Base",
   },
   {
     id: 4,
     name: "Orolo",
-    manufacturer: "James",
-    description: "klsjadfl4",
-  },
-  {
-    id: 5,
-    name: "Helena",
-    manufacturer: "Bonem karter",
-    description: "klsjadfl5",
-  },
-  {
-    id: 6,
-    name: "Orolo",
-    manufacturer: "James",
-    description: "klsjadfl4",
-  },
-  {
-    id: 7,
-    name: "Helena",
-    manufacturer: "Bonem karter",
-    description: "klsjadfl5",
-  },
-  {
-    id: 8,
-    name: "Orolo",
-    manufacturer: "James",
-    description: "klsjadfl4",
-  },
-  {
-    id: 9,
-    name: "Helena",
-    manufacturer: "Bonem karter",
-    description: "klsjadfl5",
+    description: "Good for me",
   },
 ];

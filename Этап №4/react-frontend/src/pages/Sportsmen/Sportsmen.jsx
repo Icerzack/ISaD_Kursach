@@ -7,7 +7,9 @@ import { Paper, TextField } from "@mui/material";
 import { Stack } from "@mui/system";
 import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
+import { baaList } from "../../helpers/baa";
 import { useEffect } from "react";
+import axios from "axios";
 
 const WhiteBorderTextField = styled(TextField)`
   & label.Mui-focused {
@@ -20,10 +22,10 @@ const WhiteBorderTextField = styled(TextField)`
   }
 `;
 
-export default function Exercises(props) {
+export default function Sportsmen(props) {
   const [searchText, setSearchText] = React.useState("");
   const [diplayList, setDisplayList] = React.useState([]);
-  const [number, setNumber] = React.useState("");
+  const [number, setNumber] = React.useState(0);
 
   const navigate = useNavigate();
 
@@ -31,7 +33,13 @@ export default function Exercises(props) {
   let gridHeight = h - 60;
 
   useEffect(() => {
-    // setDisplayList(baaList);
+    const url = "http://localhost:32456/get/baa?count=" + number;
+    axios({
+      method: "get",
+      url: url,
+    }).then(function (response) {
+      setDisplayList(response.data.body);
+    });
   }, []);
 
   const filteredList = diplayList.filter((item) => {
@@ -42,9 +50,10 @@ export default function Exercises(props) {
 
   const sectionStyle = {
     backgroundImage:
-      "url('https://upload.wikimedia.org/wikipedia/ru/thumb/a/a4/%D0%A0%D0%BE%D0%BA%D0%BA%D0%B8_%D0%91%D0%B0%D0%BB%D1%8C%D0%B1%D0%BE%D0%B0_%28%D0%A1%D0%B8%D0%BB%D1%8C%D0%B2%D0%B5%D1%81%D1%82%D1%80_%D0%A1%D1%82%D0%B0%D0%BB%D0%BB%D0%BE%D0%BD%D0%B5%29.jpeg/274px-%D0%A0%D0%BE%D0%BA%D0%BA%D0%B8_%D0%91%D0%B0%D0%BB%D1%8C%D0%B1%D0%BE%D0%B0_%28%D0%A1%D0%B8%D0%BB%D1%8C%D0%B2%D0%B5%D1%81%D1%82%D1%80_%D0%A1%D1%82%D0%B0%D0%BB%D0%BB%D0%BE%D0%BD%D0%B5%29.jpeg')",
+      "url('https://media.tenor.com/QUNK-PQyiCQAAAAd/chips-verypog.gif')",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    backgroundPosition: "right -340px bottom",
   };
 
   const handleSearchTextFieldChange = (event) => {
@@ -53,21 +62,6 @@ export default function Exercises(props) {
 
   const handleNumberTextFieldChange = (event) => {
     setNumber(event.target.value);
-  };
-
-  const handleSortByRating = (event) => {
-    //TODO: Делаем реквест
-  };
-
-  const handleSortByUses = (event) => {
-    //TODO: Делаем реквест
-  };
-
-  const handleCardClicked = (event) => {
-    const clickedId = event.currentTarget.getAttribute("name");
-    console.log(clickedId);
-    const url = "/sportsman/baa/" + clickedId;
-    navigate(url);
   };
 
   return (
@@ -95,7 +89,7 @@ export default function Exercises(props) {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  backgroundColor: "rgba(8,8,8,0.2)",
+                  backgroundColor: "rgba(8,8,8,0.3)",
                 }}
               >
                 <Box sx={{ color: "#ffffff" }}>Укажите сколько получить:</Box>
@@ -108,13 +102,7 @@ export default function Exercises(props) {
                       border: "2px solid #ffffff",
                     },
                   }}
-                />{" "}
-                <Button variant="contained" onClick={handleSortByRating}>
-                  Получить по рейтингу
-                </Button>
-                <Button variant="contained" onClick={handleSortByUses}>
-                  Получить по использованиям
-                </Button>
+                />
                 <Box sx={{ color: "#ffffff" }}>Искать по ключевому слову:</Box>
                 <WhiteBorderTextField
                   onChange={handleSearchTextFieldChange}
@@ -145,9 +133,9 @@ export default function Exercises(props) {
                 <DisplayCard
                   key={element.id}
                   name={element.id}
-                  title={element.name}
+                  title={element.fullName}
                   onCardClick={handleCardClicked}
-                  shortDescription={element.manufacturer}
+                  shortDescription={element.dateOfBirth}
                 ></DisplayCard>
               ))}
             </Box>

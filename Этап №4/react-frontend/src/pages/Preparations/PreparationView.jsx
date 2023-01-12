@@ -1,7 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { useParams } from "react-router-dom";
-import { baaList } from "../../helpers/baa";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
