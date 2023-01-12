@@ -8,7 +8,6 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
 export default function BaaView(props) {
   const { id } = useParams();
 
@@ -16,30 +15,36 @@ export default function BaaView(props) {
   let [manufacturer, setManufacturer] = React.useState("");
   let [description, setDescription] = React.useState("");
   let [uses, setUses] = React.useState("");
-  let [allTimeRatingDifference, setAllTimeRatingDifference] = React.useState("");
+  let [allTimeRatingDifference, setAllTimeRatingDifference] =
+    React.useState("");
   const navigate = useNavigate();
 
   const list = baaList;
 
   useEffect(() => {
-    const url = "http://localhost:32456/get/baa/"+id;
+    const url = "http://localhost:32456/get/baa/" + id;
     axios({
       method: "get",
       url: url,
-    }).then(function (response) {
-      let temp = response.data.body
-      setTitle(temp[0].name)
-      setDescription(temp[0].description)
-      setManufacturer(temp[0].manufacturer)
-      setUses(temp[0].uses)
-      setAllTimeRatingDifference(temp[0].all_time_rating_difference)
-    }).catch(function (error) {
-      if (error.response) {
-        navigate("/sportsman/baa")
-      }
-    });
-
-
+    })
+      .then(function (response) {
+        let temp = response.data.body;
+        setTitle(temp[0].name);
+        setDescription(temp[0].description);
+        setManufacturer(temp[0].manufacturer);
+        setUses(temp[0].uses);
+        setAllTimeRatingDifference(temp[0].allTimeRatingDifference);
+      })
+      .catch(function (error) {
+        if (error.response) {
+          navigate("/sportsman/baa");
+        }
+      });
+    // setTitle(baaList[0].name);
+    // setDescription(baaList[0].description);
+    // setManufacturer(baaList[0].manufacturer);
+    // setUses(baaList[0].uses);
+    // setAllTimeRatingDifference(baaList[0].allTimeRatingDifference);
   }, []);
 
   let h = window.innerHeight;
@@ -56,33 +61,30 @@ export default function BaaView(props) {
           height: "100%",
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
+          alignItems: "left",
+          flexDirection: "column",
+          ml: "50px",
+          mt: "80px",
         }}
       >
-        <Paper height="100%" elevation={3}>
-          <Stack
-            direction="column"
-            sx={{
-              p: "50px",
-              px: "200px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <img
-              src="https://avatars.mds.yandex.net/get-mpic/4905155/img_id3164344516613040350.jpeg/orig"
-              width="100"
-              height="150"
-              alt="lorem"
-            />
-            <h1>{title}</h1>
-            <h3>{manufacturer}</h3>
-            <h6>{description}</h6>
-            <h3>{uses}</h3>
-            <h6>{allTimeRatingDifference}</h6>
-          </Stack>
-        </Paper>
+        <img
+          src="https://avatars.mds.yandex.net/get-mpic/4905155/img_id3164344516613040350.jpeg/orig"
+          width="200"
+          height="300"
+          alt="lorem"
+        />
+        <Box>
+          <h1>{title}</h1>
+          <h3>{manufacturer}</h3>
+        </Box>
+        <Box>
+          <h2>Описание товара</h2>
+        </Box>
+        <Box sx={{ width: "700px", wordWrap: "break-word" }}>{description}</Box>
+        <Box>
+          <h3>Количество использований: {uses}</h3>
+          <h3>Рейтинг: {allTimeRatingDifference}</h3>
+        </Box>
       </Box>
     </Box>
   );

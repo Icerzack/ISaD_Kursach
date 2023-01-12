@@ -25,7 +25,7 @@ const WhiteBorderTextField = styled(TextField)`
 export default function Baa(props) {
   const [searchText, setSearchText] = React.useState("");
   const [diplayList, setDisplayList] = React.useState([]);
-  const [number, setNumber] = React.useState("");
+  const [number, setNumber] = React.useState(0);
 
   const navigate = useNavigate();
 
@@ -33,7 +33,13 @@ export default function Baa(props) {
   let gridHeight = h - 60;
 
   useEffect(() => {
-    setDisplayList(baaList);
+    const url = "http://localhost:32456/get/baa?count=" + number;
+    axios({
+      method: "get",
+      url: url,
+    }).then(function (response) {
+      setDisplayList(response.data.body);
+    });
   }, []);
 
   const filteredList = diplayList.filter((item) => {
@@ -59,17 +65,24 @@ export default function Baa(props) {
   };
 
   const handleSortByRating = (event) => {
+    const url = "http://localhost:32456/get/baa?count=" + number;
     axios({
       method: "get",
-      url: "http://localhost:32456/get/baa",
+      url: url,
     }).then(function (response) {
-      setDisplayList(response.data.body)
+      setDisplayList(response.data.body);
     });
-    //TODO: Делаем реквест
   };
 
   const handleSortByUses = (event) => {
-    //TODO: Делаем реквест
+    const url =
+      "http://localhost:32456/get/baa?count=" + number + "&order_type=uses";
+    axios({
+      method: "get",
+      url: url,
+    }).then(function (response) {
+      setDisplayList(response.data.body);
+    });
   };
 
   const handleCardClicked = (event) => {

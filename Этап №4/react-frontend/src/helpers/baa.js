@@ -3,7 +3,10 @@ export const baaList = [
     id: 1,
     name: "Tim",
     manufacturer: "Icerzack",
-    description: "klsjadfl1",
+    description:
+      "klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1klsjadfl1",
+    uses: "111",
+    allTimeRatingDifference: "222",
   },
   {
     id: 2,
