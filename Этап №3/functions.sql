@@ -90,15 +90,17 @@
             AS $$
             BEGIN
                 IF number = 0 then
-                return query (select preparation.preparation_id, training.name, preparation_baa.complex_name, preparation_rate.effectiveness from preparation
-                    join training on preparation.fk_training_id = training.training_id
+                return query (select preparation.preparation_id, training.name, preparation_baa.fk_baa_id, preparation_rate.effectiveness from preparation
+                    join preparation_training on preparation.preparation_id = preparation_training.fk_preparation_id
+                    join training on training.training_id = preparation_training.fk_training_id
                     join preparation_baa on preparation.preparation_id = preparation_baa.fk_preparation_id
                     join baa on preparation_baa.fk_baa_id = baa.baa_id
                     join preparation_rate on preparation.preparation_id = preparation_rate.fk_preparation_id
                     order by preparation_rate.effectiveness desc);
                 ELSE
-                return query (select preparation.preparation_id, training.name, preparation_baa.complex_name, preparation_rate.effectiveness from preparation
-                    join training on preparation.fk_training_id = training.training_id
+                return query (select preparation.preparation_id, training.name, preparation_baa.fk_baa_id, preparation_rate.effectiveness from preparation
+                    join preparation_training on preparation.preparation_id = preparation_training.fk_preparation_id
+                    join training on training.training_id = preparation_training.fk_training_id
                     join preparation_baa on preparation.preparation_id = preparation_baa.fk_preparation_id
                     join baa on preparation_baa.fk_baa_id = baa.baa_id
                     join preparation_rate on preparation.preparation_id = preparation_rate.fk_preparation_id
@@ -109,7 +111,7 @@
                     NULL;
             END;
             $$ LANGUAGE plpgsql;
-        
+        select * from GetTopPreparations(3);
         
             CREATE OR REPLACE FUNCTION GetInfoAboutPreparation(prep_id integer)
             RETURNS TABLE(preparation_id integer, training_id integer, training_name varchar(100), training_description text, baa_id integer, baa_name varchar(100), baa_desc text, preparation_rating double precision)

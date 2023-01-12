@@ -7,7 +7,7 @@ SELECT * from personnel;
 SELECT doctor_id, name, rate from doctor;
 SELECT coach_id, name, rate from coach;
 SELECT * from preparation_baa;
-SELECT * from baa_rate;
+SELECT count(*) from baa;
 SELECT * FROM baa WHERE baa_id = 1;
 SELECT * from preparation_training;
 SELECT * from training_rate;

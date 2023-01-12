@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS competition(
     fk_sport_id int REFERENCES sport ON DELETE SET NULL,
     date_of_event date NOT NULL,
     place varchar(100) NOT NULL,
-    prestige smallint CHECK (prestige >= 0 and prestige <= 100),
+    prestige smallint CHECK (prestige >= 0 and prestige <= 1000),
     description text
 );
 
@@ -71,6 +71,7 @@ CREATE TABLE IF NOT EXISTS training_exercise(
 CREATE TABLE IF NOT EXISTS preparation(
     preparation_id serial PRIMARY KEY,
     complex_name varchar(100),
+    description text,
     UNIQUE(complex_name)
 );
 

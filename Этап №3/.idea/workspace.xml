@@ -4,17 +4,19 @@
     <list default="true" id="c7c06907-09b6-47bc-b928-a5b26024f4d1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8929253c-b3db-42d9-b979-5e9d7e1dcbb2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8929253c-b3db-42d9-b979-5e9d7e1dcbb2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8929253c-b3db-42d9-b979-5e9d7e1dcbb2/storage_v2/_src_/database/megasport.QgqrEQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8929253c-b3db-42d9-b979-5e9d7e1dcbb2/storage_v2/_src_/database/megasport.QgqrEQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8929253c-b3db-42d9-b979-5e9d7e1dcbb2/storage_v2/_src_/database/megasport.QgqrEQ/schema/public.abK9xQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8929253c-b3db-42d9-b979-5e9d7e1dcbb2/storage_v2/_src_/database/megasport.QgqrEQ/schema/public.abK9xQ.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baa/baa (2).sql" beforeDir="false" afterPath="$PROJECT_DIR$/baa/baa (2).sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baa/baa (3).sql" beforeDir="false" afterPath="$PROJECT_DIR$/baa/baa (3).sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baa/baa (4).sql" beforeDir="false" afterPath="$PROJECT_DIR$/baa/baa (4).sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baa/baa.sql" beforeDir="false" afterPath="$PROJECT_DIR$/baa/baa.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/competition/competition (2).sql" beforeDir="false" afterPath="$PROJECT_DIR$/competition/competition (2).sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/create.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.sql" beforeDir="false" afterPath="$PROJECT_DIR$/functions.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.sql" beforeDir="false" afterPath="$PROJECT_DIR$/test.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Этап №4/react-frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Этап №4/react-frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Этап №4/react-frontend/src/components/top-bar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Этап №4/react-frontend/src/components/top-bar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Этап №4/react-frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Этап №4/react-frontend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Этап №4/react-frontend/src/pages/Exercises/Exercises.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Этап №4/react-frontend/src/pages/Exercises/Exercises.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Этап №4/react-frontend/src/pages/Login-Register/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Этап №4/react-frontend/src/pages/Login-Register/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Этап №4/react-frontend/src/pages/Login-Register/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Этап №4/react-frontend/src/pages/Login-Register/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Этап №4/react-frontend/src/pages/Trainings/TrainingView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Этап №4/react-frontend/src/pages/Trainings/TrainingView.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Этап №4/react-frontend/src/pages/Trainings/Trainings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Этап №4/react-frontend/src/pages/Trainings/Trainings.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_exercise/training_exercise.sql" beforeDir="false" afterPath="$PROJECT_DIR$/training_exercise/training_exercise.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Этап №4/react-frontend/src/pages/Preparations/Preparations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Этап №4/react-frontend/src/pages/Preparations/Preparations.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Этап №4/request.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Этап №4/request.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

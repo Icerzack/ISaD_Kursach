@@ -9,6 +9,7 @@ import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import { baaList } from "../../helpers/baa";
 import { useEffect } from "react";
+import axios from "axios";
 
 const WhiteBorderTextField = styled(TextField)`
   & label.Mui-focused {
@@ -58,7 +59,13 @@ export default function Baa(props) {
   };
 
   const handleSortByRating = (event) => {
-    //TODO: Делаем реквест
+    const url = "http://localhost:32456/get/preparation?count=" + number;
+    axios({
+      method: "get",
+      url: url,
+    }).then(function (response) {
+      setDisplayList(response.data.body);
+    });
   };
 
   const handleSortByUses = (event) => {

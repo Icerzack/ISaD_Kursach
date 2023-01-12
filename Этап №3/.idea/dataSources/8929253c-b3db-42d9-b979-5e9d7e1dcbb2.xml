@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.43">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>11239</IntrospectionStateNumber>
+      <IntrospectionStateNumber>29205</IntrospectionStateNumber>
       <ServerVersion>15.1</ServerVersion>
       <StartupTime>1673476295</StartupTime>
       <TimeZones>true ACDT
@@ -800,18 +800,18 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>11239</IntrospectionStateNumber>
+      <IntrospectionStateNumber>29205</IntrospectionStateNumber>
       <ObjectId>16398</ObjectId>
-      <Relations>sequence|table|19783|19784|1
+      <Relations>sequence|table|27018|27019|1
+sequence|table|27133|27134|1
+sequence|table|19783|19784|1
 sequence|table|24279|24280|1
-sequence|table|24288|24289|1
 sequence|table|24303|24304|1
 sequence|table|24311|24312|1
 sequence|table|24319|24320|1
 sequence|table|24326|24327|1
 sequence|table|24337|24338|1
 sequence|table|24348|24349|1
-sequence|table|24374|24375|1
 sequence|table|24388|24389|1
 </Relations>
       <OwnerName>postgres</OwnerName>
@@ -4226,7 +4226,7 @@ sequence|table|24388|24389|1
     <schema id="262" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>11239</IntrospectionStateNumber>
+      <IntrospectionStateNumber>29205</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4243,101 +4243,101 @@ sequence|table|24388|24389|1
     </object-type>
     <routine id="264" parent="262" name="getcompetitionsforsportsman">
       <ArgumentsDefinition>person_id integer</ArgumentsDefinition>
-      <ObjectId>26590</ObjectId>
+      <ObjectId>27407</ObjectId>
       <ResultsDefinition>TABLE(sportsman_id integer, competition_id integer, competition_name character varying, competition_date date, competition_place character varying, competition_prestige smallint, sport_id integer, sport_name character varying, preparation_id integer, rating_diff smallint)</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
       <SourceTextLength>787</SourceTextLength>
-      <StateNumber>11236</StateNumber>
+      <StateNumber>29197</StateNumber>
       <LanguageName>plpgsql</LanguageName>
       <OwnerName>postgres</OwnerName>
     </routine>
     <routine id="265" parent="262" name="getcurrentpreparationsforsportsman">
       <ArgumentsDefinition>sportsmanid integer</ArgumentsDefinition>
-      <ObjectId>26592</ObjectId>
+      <ObjectId>27409</ObjectId>
       <ResultsDefinition>TABLE(sportsman_id integer, sportsman_full_name integer, sportsman_sex character varying, sportsman_date_of_birth date, sportsman_rate double precision, preparation_id integer)</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
       <SourceTextLength>597</SourceTextLength>
-      <StateNumber>11238</StateNumber>
+      <StateNumber>29199</StateNumber>
       <LanguageName>plpgsql</LanguageName>
       <OwnerName>postgres</OwnerName>
     </routine>
     <routine id="266" parent="262" name="getexercisesfortraining">
       <ArgumentsDefinition>train_id integer</ArgumentsDefinition>
-      <ObjectId>26587</ObjectId>
+      <ObjectId>27404</ObjectId>
       <ResultsDefinition>TABLE(training_id integer, training_name character varying, training_description text, exercise_id integer, exercise_name character varying, exercise_description text)</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
       <SourceTextLength>572</SourceTextLength>
-      <StateNumber>11233</StateNumber>
+      <StateNumber>29194</StateNumber>
       <LanguageName>plpgsql</LanguageName>
       <OwnerName>postgres</OwnerName>
     </routine>
     <routine id="267" parent="262" name="getinfoaboutpreparation">
       <ArgumentsDefinition>prep_id integer</ArgumentsDefinition>
-      <ObjectId>26589</ObjectId>
+      <ObjectId>27406</ObjectId>
       <ResultsDefinition>TABLE(preparation_id integer, training_id integer, training_name character varying, training_description text, baa_id integer, baa_name character varying, baa_desc text, preparation_rating double precision)</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
       <SourceTextLength>688</SourceTextLength>
-      <StateNumber>11235</StateNumber>
+      <StateNumber>29196</StateNumber>
       <LanguageName>plpgsql</LanguageName>
       <OwnerName>postgres</OwnerName>
     </routine>
     <routine id="268" parent="262" name="gettopbaasbyrating">
       <ArgumentsDefinition>number integer</ArgumentsDefinition>
-      <ObjectId>26583</ObjectId>
+      <ObjectId>27400</ObjectId>
       <ResultsDefinition>TABLE(baa_id integer, baa_name character varying, baa_manufacturer character varying, baa_description text, baa_uses integer, baa_rate integer)</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
       <SourceTextLength>774</SourceTextLength>
-      <StateNumber>11229</StateNumber>
+      <StateNumber>29190</StateNumber>
       <LanguageName>plpgsql</LanguageName>
       <OwnerName>postgres</OwnerName>
     </routine>
     <routine id="269" parent="262" name="gettopbaasbyuses">
       <ArgumentsDefinition>number integer</ArgumentsDefinition>
-      <ObjectId>26584</ObjectId>
+      <ObjectId>27401</ObjectId>
       <ResultsDefinition>TABLE(baa_id integer, baa_name character varying, baa_manufacturer character varying, baa_description text, baa_uses integer, baa_all_time_rate_difference integer)</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
       <SourceTextLength>748</SourceTextLength>
-      <StateNumber>11230</StateNumber>
+      <StateNumber>29191</StateNumber>
       <LanguageName>plpgsql</LanguageName>
       <OwnerName>postgres</OwnerName>
     </routine>
     <routine id="270" parent="262" name="gettoppreparations">
       <ArgumentsDefinition>number integer</ArgumentsDefinition>
-      <ObjectId>26588</ObjectId>
+      <ObjectId>27405</ObjectId>
       <ResultsDefinition>TABLE(preparation_id integer, training_name character varying, baa_name character varying, preparation_rate double precision)</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
-      <SourceTextLength>1440</SourceTextLength>
-      <StateNumber>11234</StateNumber>
+      <SourceTextLength>1686</SourceTextLength>
+      <StateNumber>29204</StateNumber>
       <LanguageName>plpgsql</LanguageName>
       <OwnerName>postgres</OwnerName>
     </routine>
     <routine id="271" parent="262" name="gettopsportteams">
       <ArgumentsDefinition>sportid integer, number integer</ArgumentsDefinition>
-      <ObjectId>26591</ObjectId>
+      <ObjectId>27408</ObjectId>
       <ResultsDefinition>TABLE(sport_id integer, sport_team_id integer, sport_team_name character varying, sport_team_rate double precision)</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
       <SourceTextLength>960</SourceTextLength>
-      <StateNumber>11237</StateNumber>
+      <StateNumber>29198</StateNumber>
       <LanguageName>plpgsql</LanguageName>
       <OwnerName>postgres</OwnerName>
     </routine>
     <routine id="272" parent="262" name="gettoptrainingsbyrating">
       <ArgumentsDefinition>number integer</ArgumentsDefinition>
-      <ObjectId>26585</ObjectId>
+      <ObjectId>27402</ObjectId>
       <ResultsDefinition>TABLE(training_id integer, training_name character varying, training_description text, training_uses integer, training_rate integer)</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
       <SourceTextLength>892</SourceTextLength>
-      <StateNumber>11231</StateNumber>
+      <StateNumber>29192</StateNumber>
       <LanguageName>plpgsql</LanguageName>
       <OwnerName>postgres</OwnerName>
     </routine>
     <routine id="273" parent="262" name="gettoptrainingsbyuses">
       <ArgumentsDefinition>number integer</ArgumentsDefinition>
-      <ObjectId>26586</ObjectId>
+      <ObjectId>27403</ObjectId>
       <ResultsDefinition>TABLE(training_id integer, training_name character varying, training_description text, training_uses integer, training_rate integer)</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
       <SourceTextLength>866</SourceTextLength>
-      <StateNumber>11232</StateNumber>
+      <StateNumber>29193</StateNumber>
       <LanguageName>plpgsql</LanguageName>
       <OwnerName>postgres</OwnerName>
     </routine>
@@ -4355,8 +4355,8 @@ sequence|table|24388|24389|1
     </sequence>
     <sequence id="276" parent="262" name="competition_competition_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>24288</ObjectId>
-      <StateNumber>7003</StateNumber>
+      <ObjectId>27018</ObjectId>
+      <StateNumber>16059</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="277" parent="262" name="doctor_doctor_id_seq">
@@ -4373,8 +4373,8 @@ sequence|table|24388|24389|1
     </sequence>
     <sequence id="279" parent="262" name="preparation_preparation_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>24374</ObjectId>
-      <StateNumber>7011</StateNumber>
+      <ObjectId>27133</ObjectId>
+      <StateNumber>25255</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="280" parent="262" name="sport_sport_id_seq">
@@ -4426,8 +4426,8 @@ sequence|table|24388|24389|1
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="288" parent="262" name="competition">
-      <ObjectId>24289</ObjectId>
-      <StateNumber>7003</StateNumber>
+      <ObjectId>27019</ObjectId>
+      <StateNumber>16059</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4456,8 +4456,8 @@ sequence|table|24388|24389|1
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="293" parent="262" name="preparation">
-      <ObjectId>24375</ObjectId>
-      <StateNumber>7017</StateNumber>
+      <ObjectId>27134</ObjectId>
+      <StateNumber>25255</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4786,65 +4786,65 @@ pg_catalog</CollationParentNames>
     </key>
     <check id="348" parent="288" name="competition_prestige_check">
       <ColNames>prestige</ColNames>
-      <ObjectId>24293</ObjectId>
-      <Predicate>(prestige &gt;= 0) AND (prestige &lt;= 100)</Predicate>
-      <StateNumber>7003</StateNumber>
+      <ObjectId>27023</ObjectId>
+      <Predicate>(prestige &gt;= 0) AND (prestige &lt;= 1000)</Predicate>
+      <StateNumber>16059</StateNumber>
     </check>
     <column id="349" parent="288" name="competition_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;competition_competition_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>7003</StateNumber>
+      <StateNumber>16059</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="350" parent="288" name="name">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>7003</StateNumber>
+      <StateNumber>16059</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="351" parent="288" name="fk_sport_id">
       <DataType>integer|0s</DataType>
       <Position>3</Position>
-      <StateNumber>7003</StateNumber>
+      <StateNumber>16059</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="352" parent="288" name="date_of_event">
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>7003</StateNumber>
+      <StateNumber>16059</StateNumber>
       <TypeId>1082</TypeId>
     </column>
     <column id="353" parent="288" name="place">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>7003</StateNumber>
+      <StateNumber>16059</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="354" parent="288" name="prestige">
       <DataType>smallint|0s</DataType>
       <Position>6</Position>
-      <StateNumber>7003</StateNumber>
+      <StateNumber>16059</StateNumber>
       <TypeId>21</TypeId>
     </column>
     <column id="355" parent="288" name="description">
       <DataType>text|0s</DataType>
       <Position>7</Position>
-      <StateNumber>7003</StateNumber>
+      <StateNumber>16059</StateNumber>
       <TypeId>25</TypeId>
     </column>
     <foreign-key id="356" parent="288" name="competition_fk_sport_id_fkey">
       <ColNames>fk_sport_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24298</ObjectId>
+      <ObjectId>27028</ObjectId>
       <OnDelete>set-null</OnDelete>
       <RefColNames>sport_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>7003</StateNumber>
+      <StateNumber>16059</StateNumber>
       <RefTableId>24280</RefTableId>
       <RefTableName>sport</RefTableName>
       <RefTableKind>table</RefTableKind>
@@ -4852,18 +4852,18 @@ pg_catalog</CollationParentNames>
     <index id="357" parent="288" name="competition_pkey">
       <ColNames>competition_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24296</ObjectId>
+      <ObjectId>27026</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>7003</StateNumber>
+      <StateNumber>16059</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="358" parent="288" name="competition_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24297</ObjectId>
+      <ObjectId>27027</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>7003</StateNumber>
-      <UnderlyingIndexId>24296</UnderlyingIndexId>
+      <StateNumber>16059</StateNumber>
+      <UnderlyingIndexId>27026</UnderlyingIndexId>
     </key>
     <column id="359" parent="289" name="doctor_id">
       <DataType>integer|0s</DataType>
@@ -5074,74 +5074,68 @@ fk_coach_id</ColNames>
       <DefaultExpression>nextval(&apos;preparation_preparation_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>7011</StateNumber>
+      <StateNumber>25255</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="384" parent="293" name="complex_name">
       <DataType>varchar(100)|0s</DataType>
       <Position>2</Position>
-      <StateNumber>7011</StateNumber>
+      <StateNumber>25255</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="385" parent="293" name="preparation_pkey">
+    <column id="385" parent="293" name="description">
+      <DataType>text|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>25255</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <index id="386" parent="293" name="preparation_pkey">
       <ColNames>preparation_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24379</ObjectId>
+      <ObjectId>27140</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>7011</StateNumber>
+      <StateNumber>25255</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="386" parent="293" name="preparation_complex_name_key">
+    <index id="387" parent="293" name="preparation_complex_name_key">
       <ColNames>complex_name</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24381</ObjectId>
-      <StateNumber>7011</StateNumber>
+      <ObjectId>27142</ObjectId>
+      <StateNumber>25255</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="387" parent="293" name="preparation_pkey">
+    <key id="388" parent="293" name="preparation_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24380</ObjectId>
+      <ObjectId>27141</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>7011</StateNumber>
-      <UnderlyingIndexId>24379</UnderlyingIndexId>
+      <StateNumber>25255</StateNumber>
+      <UnderlyingIndexId>27140</UnderlyingIndexId>
     </key>
-    <key id="388" parent="293" name="preparation_complex_name_key">
+    <key id="389" parent="293" name="preparation_complex_name_key">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24382</ObjectId>
-      <StateNumber>7011</StateNumber>
-      <UnderlyingIndexId>24381</UnderlyingIndexId>
+      <ObjectId>27143</ObjectId>
+      <StateNumber>25255</StateNumber>
+      <UnderlyingIndexId>27142</UnderlyingIndexId>
     </key>
-    <column id="389" parent="294" name="fk_preparation_id">
+    <column id="390" parent="294" name="fk_preparation_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>7022</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="390" parent="294" name="fk_baa_id">
+    <column id="391" parent="294" name="fk_baa_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>7022</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="391" parent="294" name="preparation_baa_fk_preparation_id_fkey">
-      <ColNames>fk_preparation_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24537</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>preparation_id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>7022</StateNumber>
-      <RefTableId>24375</RefTableId>
-      <RefTableName>preparation</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
     <foreign-key id="392" parent="294" name="preparation_baa_fk_baa_id_fkey">
       <ColNames>fk_baa_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -5185,19 +5179,7 @@ fk_baa_id</ColNames>
       <StateNumber>7020</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="397" parent="295" name="preparation_rate_fk_preparation_id_fkey">
-      <ColNames>fk_preparation_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24515</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>preparation_id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>7020</StateNumber>
-      <RefTableId>24375</RefTableId>
-      <RefTableName>preparation</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <index id="398" parent="295" name="preparation_rate_pkey">
+    <index id="397" parent="295" name="preparation_rate_pkey">
       <ColNames>fk_preparation_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24513</ObjectId>
@@ -5206,40 +5188,28 @@ fk_baa_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="399" parent="295" name="preparation_rate_pkey">
+    <key id="398" parent="295" name="preparation_rate_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24514</ObjectId>
       <Primary>1</Primary>
       <StateNumber>7020</StateNumber>
       <UnderlyingIndexId>24513</UnderlyingIndexId>
     </key>
-    <column id="400" parent="296" name="fk_preparation_id">
+    <column id="399" parent="296" name="fk_preparation_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>7023</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="401" parent="296" name="fk_training_id">
+    <column id="400" parent="296" name="fk_training_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>7023</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="402" parent="296" name="preparation_training_fk_preparation_id_fkey">
-      <ColNames>fk_preparation_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24552</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>preparation_id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>7023</StateNumber>
-      <RefTableId>24375</RefTableId>
-      <RefTableName>preparation</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <foreign-key id="403" parent="296" name="preparation_training_fk_training_id_fkey">
+    <foreign-key id="401" parent="296" name="preparation_training_fk_training_id_fkey">
       <ColNames>fk_training_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24557</ObjectId>
@@ -5251,7 +5221,7 @@ fk_baa_id</ColNames>
       <RefTableName>training</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="404" parent="296" name="preparation_training_pkey">
+    <index id="402" parent="296" name="preparation_training_pkey">
       <ColNames>fk_preparation_id
 fk_training_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -5261,14 +5231,14 @@ fk_training_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="405" parent="296" name="preparation_training_pkey">
+    <key id="403" parent="296" name="preparation_training_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24551</ObjectId>
       <Primary>1</Primary>
       <StateNumber>7023</StateNumber>
       <UnderlyingIndexId>24550</UnderlyingIndexId>
     </key>
-    <column id="406" parent="297" name="sport_id">
+    <column id="404" parent="297" name="sport_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;sport_sport_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5276,14 +5246,14 @@ fk_training_id</ColNames>
       <StateNumber>7002</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="407" parent="297" name="name">
+    <column id="405" parent="297" name="name">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>7002</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="408" parent="297" name="sport_pkey">
+    <index id="406" parent="297" name="sport_pkey">
       <ColNames>sport_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24284</ObjectId>
@@ -5292,7 +5262,7 @@ fk_training_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="409" parent="297" name="sport_name_key">
+    <index id="407" parent="297" name="sport_name_key">
       <ColNames>name</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24286</ObjectId>
@@ -5303,20 +5273,20 @@ fk_training_id</ColNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="410" parent="297" name="sport_pkey">
+    <key id="408" parent="297" name="sport_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24285</ObjectId>
       <Primary>1</Primary>
       <StateNumber>7002</StateNumber>
       <UnderlyingIndexId>24284</UnderlyingIndexId>
     </key>
-    <key id="411" parent="297" name="sport_name_key">
+    <key id="409" parent="297" name="sport_name_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24287</ObjectId>
       <StateNumber>7002</StateNumber>
       <UnderlyingIndexId>24286</UnderlyingIndexId>
     </key>
-    <column id="412" parent="298" name="sport_team_id">
+    <column id="410" parent="298" name="sport_team_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;sport_team_sport_team_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5324,20 +5294,20 @@ fk_training_id</ColNames>
       <StateNumber>7006</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="413" parent="298" name="name">
+    <column id="411" parent="298" name="name">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>7006</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="414" parent="298" name="average_rate">
+    <column id="412" parent="298" name="average_rate">
       <DataType>double precision|0s</DataType>
       <Position>3</Position>
       <StateNumber>7006</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <index id="415" parent="298" name="sport_team_pkey">
+    <index id="413" parent="298" name="sport_team_pkey">
       <ColNames>sport_team_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24324</ObjectId>
@@ -5346,35 +5316,35 @@ fk_training_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="416" parent="298" name="sport_team_pkey">
+    <key id="414" parent="298" name="sport_team_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24325</ObjectId>
       <Primary>1</Primary>
       <StateNumber>7006</StateNumber>
       <UnderlyingIndexId>24324</UnderlyingIndexId>
     </key>
-    <column id="417" parent="299" name="fk_sport_team_id">
+    <column id="415" parent="299" name="fk_sport_team_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>7015</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="418" parent="299" name="fk_sport_id">
+    <column id="416" parent="299" name="fk_sport_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>7015</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="419" parent="299" name="fk_sportsman_id">
+    <column id="417" parent="299" name="fk_sportsman_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>7015</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="420" parent="299" name="sport_team_sport_fk_sport_team_id_fkey">
+    <foreign-key id="418" parent="299" name="sport_team_sport_fk_sport_team_id_fkey">
       <ColNames>fk_sport_team_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24420</ObjectId>
@@ -5386,7 +5356,7 @@ fk_training_id</ColNames>
       <RefTableName>sport_team</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="421" parent="299" name="sport_team_sport_fk_sport_id_fkey">
+    <foreign-key id="419" parent="299" name="sport_team_sport_fk_sport_id_fkey">
       <ColNames>fk_sport_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24425</ObjectId>
@@ -5398,7 +5368,7 @@ fk_training_id</ColNames>
       <RefTableName>sport</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="422" parent="299" name="sport_team_sport_fk_sportsman_id_fkey">
+    <foreign-key id="420" parent="299" name="sport_team_sport_fk_sportsman_id_fkey">
       <ColNames>fk_sportsman_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24430</ObjectId>
@@ -5410,7 +5380,7 @@ fk_training_id</ColNames>
       <RefTableName>sportsman</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="423" parent="299" name="sport_team_sport_pkey">
+    <index id="421" parent="299" name="sport_team_sport_pkey">
       <ColNames>fk_sport_team_id
 fk_sport_id
 fk_sportsman_id</ColNames>
@@ -5421,48 +5391,48 @@ fk_sportsman_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="424" parent="299" name="sport_team_sport_pkey">
+    <key id="422" parent="299" name="sport_team_sport_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24419</ObjectId>
       <Primary>1</Primary>
       <StateNumber>7015</StateNumber>
       <UnderlyingIndexId>24418</UnderlyingIndexId>
     </key>
-    <column id="425" parent="300" name="sportsman_id">
+    <column id="423" parent="300" name="sportsman_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>7014</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="426" parent="300" name="full_name">
+    <column id="424" parent="300" name="full_name">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>7014</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="427" parent="300" name="sex">
+    <column id="425" parent="300" name="sex">
       <DataType>sex|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>7014</StateNumber>
       <TypeId>18578</TypeId>
     </column>
-    <column id="428" parent="300" name="date_of_birth">
+    <column id="426" parent="300" name="date_of_birth">
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>7014</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="429" parent="300" name="fk_sport_team_id">
+    <column id="427" parent="300" name="fk_sport_team_id">
       <DataType>integer|0s</DataType>
       <Position>5</Position>
       <StateNumber>7014</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="430" parent="300" name="sportsman_sportsman_id_fkey">
+    <foreign-key id="428" parent="300" name="sportsman_sportsman_id_fkey">
       <ColNames>sportsman_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24405</ObjectId>
@@ -5473,7 +5443,7 @@ fk_sportsman_id</ColNames>
       <RefTableName>sportsman_login</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="431" parent="300" name="sportsman_fk_sport_team_id_fkey">
+    <foreign-key id="429" parent="300" name="sportsman_fk_sport_team_id_fkey">
       <ColNames>fk_sport_team_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24410</ObjectId>
@@ -5485,7 +5455,7 @@ fk_sportsman_id</ColNames>
       <RefTableName>sport_team</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="432" parent="300" name="sportsman_pkey">
+    <index id="430" parent="300" name="sportsman_pkey">
       <ColNames>sportsman_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24403</ObjectId>
@@ -5494,41 +5464,41 @@ fk_sportsman_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="433" parent="300" name="sportsman_pkey">
+    <key id="431" parent="300" name="sportsman_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24404</ObjectId>
       <Primary>1</Primary>
       <StateNumber>7014</StateNumber>
       <UnderlyingIndexId>24403</UnderlyingIndexId>
     </key>
-    <column id="434" parent="301" name="fk_sportsman_id">
+    <column id="432" parent="301" name="fk_sportsman_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>7018</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="435" parent="301" name="fk_competition_id">
+    <column id="433" parent="301" name="fk_competition_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>7018</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="436" parent="301" name="fk_preparation_id">
+    <column id="434" parent="301" name="fk_preparation_id">
       <DataType>integer|0s</DataType>
       <Position>3</Position>
       <StateNumber>7018</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="437" parent="301" name="rating_difference">
+    <column id="435" parent="301" name="rating_difference">
       <DataType>smallint|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>4</Position>
       <StateNumber>7018</StateNumber>
       <TypeId>21</TypeId>
     </column>
-    <foreign-key id="438" parent="301" name="sportsman_competition_fk_sportsman_id_fkey">
+    <foreign-key id="436" parent="301" name="sportsman_competition_fk_sportsman_id_fkey">
       <ColNames>fk_sportsman_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24482</ObjectId>
@@ -5540,31 +5510,7 @@ fk_sportsman_id</ColNames>
       <RefTableName>sportsman</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="439" parent="301" name="sportsman_competition_fk_competition_id_fkey">
-      <ColNames>fk_competition_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24487</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>competition_id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>7018</StateNumber>
-      <RefTableId>24289</RefTableId>
-      <RefTableName>competition</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <foreign-key id="440" parent="301" name="sportsman_competition_fk_preparation_id_fkey">
-      <ColNames>fk_preparation_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24492</ObjectId>
-      <OnDelete>set-null</OnDelete>
-      <RefColNames>preparation_id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>7018</StateNumber>
-      <RefTableId>24375</RefTableId>
-      <RefTableName>preparation</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <index id="441" parent="301" name="sportsman_competition_pkey">
+    <index id="437" parent="301" name="sportsman_competition_pkey">
       <ColNames>fk_sportsman_id
 fk_competition_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -5574,14 +5520,14 @@ fk_competition_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="442" parent="301" name="sportsman_competition_pkey">
+    <key id="438" parent="301" name="sportsman_competition_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24481</ObjectId>
       <Primary>1</Primary>
       <StateNumber>7018</StateNumber>
       <UnderlyingIndexId>24480</UnderlyingIndexId>
     </key>
-    <column id="443" parent="302" name="sportsman_id">
+    <column id="439" parent="302" name="sportsman_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;sportsman_login_sportsman_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5589,14 +5535,14 @@ fk_competition_id</ColNames>
       <StateNumber>7013</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="444" parent="302" name="login">
+    <column id="440" parent="302" name="login">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>7013</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <foreign-key id="445" parent="302" name="sportsman_login_login_fkey">
+    <foreign-key id="441" parent="302" name="sportsman_login_login_fkey">
       <ColNames>login</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24395</ObjectId>
@@ -5607,7 +5553,7 @@ fk_competition_id</ColNames>
       <RefTableName>login_password</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="446" parent="302" name="sportsman_login_pkey">
+    <index id="442" parent="302" name="sportsman_login_pkey">
       <ColNames>sportsman_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24393</ObjectId>
@@ -5616,14 +5562,14 @@ fk_competition_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="447" parent="302" name="sportsman_login_pkey">
+    <key id="443" parent="302" name="sportsman_login_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24394</ObjectId>
       <Primary>1</Primary>
       <StateNumber>7013</StateNumber>
       <UnderlyingIndexId>24393</UnderlyingIndexId>
     </key>
-    <column id="448" parent="303" name="sportsman_id">
+    <column id="444" parent="303" name="sportsman_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;sportsman_password_sportsman_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5631,14 +5577,14 @@ fk_competition_id</ColNames>
       <StateNumber>2544</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="449" parent="303" name="password">
+    <column id="445" parent="303" name="password">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>2544</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="450" parent="303" name="sportsman_password_pkey">
+    <index id="446" parent="303" name="sportsman_password_pkey">
       <ColNames>sportsman_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>19788</ObjectId>
@@ -5647,41 +5593,41 @@ fk_competition_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="451" parent="303" name="sportsman_password_pkey">
+    <key id="447" parent="303" name="sportsman_password_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>19789</ObjectId>
       <Primary>1</Primary>
       <StateNumber>2544</StateNumber>
       <UnderlyingIndexId>19788</UnderlyingIndexId>
     </key>
-    <column id="452" parent="304" name="fk_sportsman_id">
+    <column id="448" parent="304" name="fk_sportsman_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>7017</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="453" parent="304" name="fk_sport_id">
+    <column id="449" parent="304" name="fk_sport_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>7017</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="454" parent="304" name="rate">
+    <column id="450" parent="304" name="rate">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>3</Position>
       <StateNumber>7017</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="455" parent="304" name="fk_preparation_id">
+    <column id="451" parent="304" name="fk_preparation_id">
       <DataType>integer|0s</DataType>
       <Position>4</Position>
       <StateNumber>7017</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="456" parent="304" name="sportsman_sport_fk_sportsman_id_fkey">
+    <foreign-key id="452" parent="304" name="sportsman_sport_fk_sportsman_id_fkey">
       <ColNames>fk_sportsman_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24461</ObjectId>
@@ -5693,7 +5639,7 @@ fk_competition_id</ColNames>
       <RefTableName>sportsman</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="457" parent="304" name="sportsman_sport_fk_sport_id_fkey">
+    <foreign-key id="453" parent="304" name="sportsman_sport_fk_sport_id_fkey">
       <ColNames>fk_sport_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24466</ObjectId>
@@ -5705,19 +5651,7 @@ fk_competition_id</ColNames>
       <RefTableName>sport</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="458" parent="304" name="sportsman_sport_fk_preparation_id_fkey">
-      <ColNames>fk_preparation_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>24471</ObjectId>
-      <OnDelete>set-null</OnDelete>
-      <RefColNames>preparation_id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>7017</StateNumber>
-      <RefTableId>24375</RefTableId>
-      <RefTableName>preparation</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <index id="459" parent="304" name="sportsman_sport_pkey">
+    <index id="454" parent="304" name="sportsman_sport_pkey">
       <ColNames>fk_sportsman_id
 fk_sport_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -5727,14 +5661,14 @@ fk_sport_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="460" parent="304" name="sportsman_sport_pkey">
+    <key id="455" parent="304" name="sportsman_sport_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24460</ObjectId>
       <Primary>1</Primary>
       <StateNumber>7017</StateNumber>
       <UnderlyingIndexId>24459</UnderlyingIndexId>
     </key>
-    <column id="461" parent="305" name="training_id">
+    <column id="456" parent="305" name="training_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;training_training_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5742,20 +5676,20 @@ fk_sport_id</ColNames>
       <StateNumber>7009</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="462" parent="305" name="name">
+    <column id="457" parent="305" name="name">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>7009</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="463" parent="305" name="description">
+    <column id="458" parent="305" name="description">
       <DataType>text|0s</DataType>
       <Position>3</Position>
       <StateNumber>7009</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="464" parent="305" name="training_pkey">
+    <index id="459" parent="305" name="training_pkey">
       <ColNames>training_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24355</ObjectId>
@@ -5764,7 +5698,7 @@ fk_sport_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="465" parent="305" name="training_name_description_key">
+    <index id="460" parent="305" name="training_name_description_key">
       <ColNames>name
 description</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -5779,34 +5713,34 @@ default</CollationNames>
       <CollationParentNames>pg_catalog
 pg_catalog</CollationParentNames>
     </index>
-    <key id="466" parent="305" name="training_pkey">
+    <key id="461" parent="305" name="training_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24356</ObjectId>
       <Primary>1</Primary>
       <StateNumber>7009</StateNumber>
       <UnderlyingIndexId>24355</UnderlyingIndexId>
     </key>
-    <key id="467" parent="305" name="training_name_description_key">
+    <key id="462" parent="305" name="training_name_description_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24358</ObjectId>
       <StateNumber>7009</StateNumber>
       <UnderlyingIndexId>24357</UnderlyingIndexId>
     </key>
-    <column id="468" parent="306" name="fk_training_id">
+    <column id="463" parent="306" name="fk_training_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>7010</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="469" parent="306" name="fk_exercise_id">
+    <column id="464" parent="306" name="fk_exercise_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>7010</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="470" parent="306" name="training_exercise_fk_training_id_fkey">
+    <foreign-key id="465" parent="306" name="training_exercise_fk_training_id_fkey">
       <ColNames>fk_training_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24364</ObjectId>
@@ -5818,7 +5752,7 @@ pg_catalog</CollationParentNames>
       <RefTableName>training</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="471" parent="306" name="training_exercise_fk_exercise_id_fkey">
+    <foreign-key id="466" parent="306" name="training_exercise_fk_exercise_id_fkey">
       <ColNames>fk_exercise_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24369</ObjectId>
@@ -5830,7 +5764,7 @@ pg_catalog</CollationParentNames>
       <RefTableName>exercise</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="472" parent="306" name="training_exercise_pkey">
+    <index id="467" parent="306" name="training_exercise_pkey">
       <ColNames>fk_training_id
 fk_exercise_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -5840,35 +5774,35 @@ fk_exercise_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="473" parent="306" name="training_exercise_pkey">
+    <key id="468" parent="306" name="training_exercise_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24363</ObjectId>
       <Primary>1</Primary>
       <StateNumber>7010</StateNumber>
       <UnderlyingIndexId>24362</UnderlyingIndexId>
     </key>
-    <column id="474" parent="307" name="fk_training_id">
+    <column id="469" parent="307" name="fk_training_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>7021</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="475" parent="307" name="number_uses">
+    <column id="470" parent="307" name="number_uses">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>2</Position>
       <StateNumber>7021</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="476" parent="307" name="all_time_rate_difference">
+    <column id="471" parent="307" name="all_time_rate_difference">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>3</Position>
       <StateNumber>7021</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="477" parent="307" name="training_rate_fk_training_id_fkey">
+    <foreign-key id="472" parent="307" name="training_rate_fk_training_id_fkey">
       <ColNames>fk_training_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24527</ObjectId>
@@ -5880,7 +5814,7 @@ fk_exercise_id</ColNames>
       <RefTableName>training</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="478" parent="307" name="training_rate_pkey">
+    <index id="473" parent="307" name="training_rate_pkey">
       <ColNames>fk_training_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24525</ObjectId>
@@ -5889,7 +5823,7 @@ fk_exercise_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="479" parent="307" name="training_rate_pkey">
+    <key id="474" parent="307" name="training_rate_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24526</ObjectId>
       <Primary>1</Primary>
