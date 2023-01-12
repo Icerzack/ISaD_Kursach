@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.43">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>2554</IntrospectionStateNumber>
+      <IntrospectionStateNumber>7024</IntrospectionStateNumber>
       <ServerVersion>15.1</ServerVersion>
       <StartupTime>1673476295</StartupTime>
       <TimeZones>true ACDT
@@ -800,19 +800,19 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>2554</IntrospectionStateNumber>
+      <IntrospectionStateNumber>7024</IntrospectionStateNumber>
       <ObjectId>16398</ObjectId>
-      <Relations>sequence|table|19667|19668|1
-sequence|table|19676|19677|1
-sequence|table|19691|19692|1
-sequence|table|19699|19700|1
-sequence|table|19707|19708|1
-sequence|table|19714|19715|1
-sequence|table|19725|19726|1
-sequence|table|19736|19737|1
-sequence|table|19762|19763|1
-sequence|table|19771|19772|1
-sequence|table|19783|19784|1
+      <Relations>sequence|table|19783|19784|1
+sequence|table|24279|24280|1
+sequence|table|24288|24289|1
+sequence|table|24303|24304|1
+sequence|table|24311|24312|1
+sequence|table|24319|24320|1
+sequence|table|24326|24327|1
+sequence|table|24337|24338|1
+sequence|table|24348|24349|1
+sequence|table|24374|24375|1
+sequence|table|24388|24389|1
 </Relations>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4226,7 +4226,7 @@ sequence|table|19783|19784|1
     <schema id="262" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>2554</IntrospectionStateNumber>
+      <IntrospectionStateNumber>7024</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4243,239 +4243,251 @@ sequence|table|19783|19784|1
     </object-type>
     <sequence id="264" parent="262" name="baa_baa_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>19714</ObjectId>
-      <StateNumber>2538</StateNumber>
+      <ObjectId>24326</ObjectId>
+      <StateNumber>7007</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="265" parent="262" name="coach_coach_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>19699</ObjectId>
-      <StateNumber>2536</StateNumber>
+      <ObjectId>24311</ObjectId>
+      <StateNumber>7005</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="266" parent="262" name="competition_competition_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>19676</ObjectId>
-      <StateNumber>2534</StateNumber>
+      <ObjectId>24288</ObjectId>
+      <StateNumber>7003</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="267" parent="262" name="doctor_doctor_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>19691</ObjectId>
-      <StateNumber>2535</StateNumber>
+      <ObjectId>24303</ObjectId>
+      <StateNumber>7004</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="268" parent="262" name="exercise_exercise_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>19725</ObjectId>
-      <StateNumber>2539</StateNumber>
+      <ObjectId>24337</ObjectId>
+      <StateNumber>7008</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="269" parent="262" name="preparation_preparation_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>19762</ObjectId>
-      <StateNumber>2542</StateNumber>
+      <ObjectId>24374</ObjectId>
+      <StateNumber>7011</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="270" parent="262" name="sport_sport_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>19667</ObjectId>
-      <StateNumber>2533</StateNumber>
+      <ObjectId>24279</ObjectId>
+      <StateNumber>7002</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="271" parent="262" name="sport_team_sport_team_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>19707</ObjectId>
-      <StateNumber>2537</StateNumber>
+      <ObjectId>24319</ObjectId>
+      <StateNumber>7006</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="272" parent="262" name="sportsman_password_sportsman_id_seq">
+    <sequence id="272" parent="262" name="sportsman_login_sportsman_id_seq">
+      <DataType>integer|0s</DataType>
+      <ObjectId>24388</ObjectId>
+      <StateNumber>7013</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="273" parent="262" name="sportsman_password_sportsman_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>19783</ObjectId>
       <StateNumber>2544</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="273" parent="262" name="sportsman_sportsman_id_seq">
-      <DataType>integer|0s</DataType>
-      <ObjectId>19771</ObjectId>
-      <StateNumber>2543</StateNumber>
-      <OwnerName>postgres</OwnerName>
-    </sequence>
     <sequence id="274" parent="262" name="training_training_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>19736</ObjectId>
-      <StateNumber>2540</StateNumber>
+      <ObjectId>24348</ObjectId>
+      <StateNumber>7009</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <table id="275" parent="262" name="baa">
-      <ObjectId>19715</ObjectId>
-      <StateNumber>2549</StateNumber>
+      <ObjectId>24327</ObjectId>
+      <StateNumber>7019</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="276" parent="262" name="baa_rate">
-      <ObjectId>19872</ObjectId>
-      <StateNumber>2549</StateNumber>
+      <ObjectId>24497</ObjectId>
+      <StateNumber>7019</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="277" parent="262" name="coach">
-      <ObjectId>19700</ObjectId>
-      <StateNumber>2546</StateNumber>
+      <ObjectId>24312</ObjectId>
+      <StateNumber>7016</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="278" parent="262" name="competition">
-      <ObjectId>19677</ObjectId>
-      <StateNumber>2534</StateNumber>
+      <ObjectId>24289</ObjectId>
+      <StateNumber>7003</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="279" parent="262" name="doctor">
-      <ObjectId>19692</ObjectId>
-      <StateNumber>2546</StateNumber>
+      <ObjectId>24304</ObjectId>
+      <StateNumber>7016</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="280" parent="262" name="exercise">
-      <ObjectId>19726</ObjectId>
-      <StateNumber>2541</StateNumber>
+      <ObjectId>24338</ObjectId>
+      <StateNumber>7010</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="281" parent="262" name="personnel">
-      <ObjectId>19810</ObjectId>
-      <StateNumber>2546</StateNumber>
+    <table id="281" parent="262" name="login_password">
+      <ObjectId>24383</ObjectId>
+      <StateNumber>7013</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="282" parent="262" name="preparation">
-      <ObjectId>19763</ObjectId>
-      <StateNumber>2547</StateNumber>
+    <table id="282" parent="262" name="personnel">
+      <ObjectId>24435</ObjectId>
+      <StateNumber>7016</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="283" parent="262" name="preparation_baa">
-      <ObjectId>19907</ObjectId>
-      <StateNumber>2552</StateNumber>
+    <table id="283" parent="262" name="preparation">
+      <ObjectId>24375</ObjectId>
+      <StateNumber>7017</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="284" parent="262" name="preparation_rate">
-      <ObjectId>19884</ObjectId>
-      <StateNumber>2550</StateNumber>
+    <table id="284" parent="262" name="preparation_baa">
+      <ObjectId>24532</ObjectId>
+      <StateNumber>7022</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="285" parent="262" name="preparation_training">
-      <ObjectId>19922</ObjectId>
-      <StateNumber>2553</StateNumber>
+    <table id="285" parent="262" name="preparation_rate">
+      <ObjectId>24509</ObjectId>
+      <StateNumber>7020</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="286" parent="262" name="sport">
-      <ObjectId>19668</ObjectId>
-      <StateNumber>2534</StateNumber>
+    <table id="286" parent="262" name="preparation_training">
+      <ObjectId>24547</ObjectId>
+      <StateNumber>7023</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="287" parent="262" name="sport_team">
-      <ObjectId>19708</ObjectId>
-      <StateNumber>2543</StateNumber>
+    <table id="287" parent="262" name="sport">
+      <ObjectId>24280</ObjectId>
+      <StateNumber>7003</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="288" parent="262" name="sport_team_sport">
-      <ObjectId>19790</ObjectId>
-      <StateNumber>2545</StateNumber>
+    <table id="288" parent="262" name="sport_team">
+      <ObjectId>24320</ObjectId>
+      <StateNumber>7014</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="289" parent="262" name="sportsman">
-      <ObjectId>19772</ObjectId>
-      <StateNumber>2543</StateNumber>
+    <table id="289" parent="262" name="sport_team_sport">
+      <ObjectId>24415</ObjectId>
+      <StateNumber>7015</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="290" parent="262" name="sportsman_competition">
-      <ObjectId>19851</ObjectId>
-      <StateNumber>2548</StateNumber>
+    <table id="290" parent="262" name="sportsman">
+      <ObjectId>24400</ObjectId>
+      <StateNumber>7014</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="291" parent="262" name="sportsman_password">
+    <table id="291" parent="262" name="sportsman_competition">
+      <ObjectId>24476</ObjectId>
+      <StateNumber>7018</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="292" parent="262" name="sportsman_login">
+      <ObjectId>24389</ObjectId>
+      <StateNumber>7013</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="293" parent="262" name="sportsman_password">
       <ObjectId>19784</ObjectId>
       <StateNumber>2544</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="292" parent="262" name="sportsman_sport">
-      <ObjectId>19830</ObjectId>
-      <StateNumber>2547</StateNumber>
+    <table id="294" parent="262" name="sportsman_sport">
+      <ObjectId>24455</ObjectId>
+      <StateNumber>7017</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="293" parent="262" name="training">
-      <ObjectId>19737</ObjectId>
-      <StateNumber>2541</StateNumber>
+    <table id="295" parent="262" name="training">
+      <ObjectId>24349</ObjectId>
+      <StateNumber>7010</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="294" parent="262" name="training_exercise">
-      <ObjectId>19747</ObjectId>
-      <StateNumber>2541</StateNumber>
+    <table id="296" parent="262" name="training_exercise">
+      <ObjectId>24359</ObjectId>
+      <StateNumber>7010</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="295" parent="262" name="training_rate">
-      <ObjectId>19895</ObjectId>
-      <StateNumber>2551</StateNumber>
+    <table id="297" parent="262" name="training_rate">
+      <ObjectId>24520</ObjectId>
+      <StateNumber>7021</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="296" parent="275" name="baa_id">
+    <column id="298" parent="275" name="baa_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;baa_baa_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2538</StateNumber>
+      <StateNumber>7007</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="297" parent="275" name="name">
+    <column id="299" parent="275" name="name">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>2538</StateNumber>
+      <StateNumber>7007</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="298" parent="275" name="manufacturer">
+    <column id="300" parent="275" name="manufacturer">
       <DataType>varchar(100)|0s</DataType>
       <Position>3</Position>
-      <StateNumber>2538</StateNumber>
+      <StateNumber>7007</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="299" parent="275" name="description">
+    <column id="301" parent="275" name="description">
       <DataType>text|0s</DataType>
       <Position>4</Position>
-      <StateNumber>2538</StateNumber>
+      <StateNumber>7007</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="300" parent="275" name="baa_pkey">
+    <index id="302" parent="275" name="baa_pkey">
       <ColNames>baa_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19721</ObjectId>
+      <ObjectId>24333</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2538</StateNumber>
+      <StateNumber>7007</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="301" parent="275" name="baa_name_manufacturer_description_key">
+    <index id="303" parent="275" name="baa_name_manufacturer_description_key">
       <ColNames>name
 manufacturer
 description</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19723</ObjectId>
-      <StateNumber>2538</StateNumber>
+      <ObjectId>24335</ObjectId>
+      <StateNumber>7007</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default
@@ -4488,261 +4500,261 @@ pg_catalog</CollationParentNames>
 100
 100</CollationIds>
     </index>
-    <key id="302" parent="275" name="baa_pkey">
+    <key id="304" parent="275" name="baa_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19722</ObjectId>
+      <ObjectId>24334</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2538</StateNumber>
-      <UnderlyingIndexId>19721</UnderlyingIndexId>
+      <StateNumber>7007</StateNumber>
+      <UnderlyingIndexId>24333</UnderlyingIndexId>
     </key>
-    <key id="303" parent="275" name="baa_name_manufacturer_description_key">
+    <key id="305" parent="275" name="baa_name_manufacturer_description_key">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19724</ObjectId>
-      <StateNumber>2538</StateNumber>
-      <UnderlyingIndexId>19723</UnderlyingIndexId>
+      <ObjectId>24336</ObjectId>
+      <StateNumber>7007</StateNumber>
+      <UnderlyingIndexId>24335</UnderlyingIndexId>
     </key>
-    <column id="304" parent="276" name="fk_baa_id">
+    <column id="306" parent="276" name="fk_baa_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2549</StateNumber>
+      <StateNumber>7019</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="305" parent="276" name="number_uses">
+    <column id="307" parent="276" name="number_uses">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>2</Position>
-      <StateNumber>2549</StateNumber>
+      <StateNumber>7019</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="306" parent="276" name="all_time_rate_difference">
+    <column id="308" parent="276" name="all_time_rate_difference">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>3</Position>
-      <StateNumber>2549</StateNumber>
+      <StateNumber>7019</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="307" parent="276" name="baa_rate_fk_baa_id_fkey">
+    <foreign-key id="309" parent="276" name="baa_rate_fk_baa_id_fkey">
       <ColNames>fk_baa_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19879</ObjectId>
+      <ObjectId>24504</ObjectId>
       <OnDelete>cascade</OnDelete>
       <RefColNames>baa_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2549</StateNumber>
-      <RefTableId>19715</RefTableId>
+      <StateNumber>7019</StateNumber>
+      <RefTableId>24327</RefTableId>
       <RefTableName>baa</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="308" parent="276" name="baa_rate_pkey">
+    <index id="310" parent="276" name="baa_rate_pkey">
       <ColNames>fk_baa_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19877</ObjectId>
+      <ObjectId>24502</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2549</StateNumber>
+      <StateNumber>7019</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="309" parent="276" name="baa_rate_pkey">
+    <key id="311" parent="276" name="baa_rate_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19878</ObjectId>
+      <ObjectId>24503</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2549</StateNumber>
-      <UnderlyingIndexId>19877</UnderlyingIndexId>
+      <StateNumber>7019</StateNumber>
+      <UnderlyingIndexId>24502</UnderlyingIndexId>
     </key>
-    <column id="310" parent="277" name="coach_id">
+    <column id="312" parent="277" name="coach_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;coach_coach_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2536</StateNumber>
+      <StateNumber>7005</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="311" parent="277" name="name">
+    <column id="313" parent="277" name="name">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>2536</StateNumber>
+      <StateNumber>7005</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="312" parent="277" name="rate">
+    <column id="314" parent="277" name="rate">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>3</Position>
-      <StateNumber>2536</StateNumber>
+      <StateNumber>7005</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="313" parent="277" name="coach_pkey">
+    <index id="315" parent="277" name="coach_pkey">
       <ColNames>coach_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19705</ObjectId>
+      <ObjectId>24317</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2536</StateNumber>
+      <StateNumber>7005</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="314" parent="277" name="coach_pkey">
+    <key id="316" parent="277" name="coach_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19706</ObjectId>
+      <ObjectId>24318</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2536</StateNumber>
-      <UnderlyingIndexId>19705</UnderlyingIndexId>
+      <StateNumber>7005</StateNumber>
+      <UnderlyingIndexId>24317</UnderlyingIndexId>
     </key>
-    <check id="315" parent="278" name="competition_prestige_check">
+    <check id="317" parent="278" name="competition_prestige_check">
       <ColNames>prestige</ColNames>
-      <ObjectId>19681</ObjectId>
+      <ObjectId>24293</ObjectId>
       <Predicate>(prestige &gt;= 0) AND (prestige &lt;= 100)</Predicate>
-      <StateNumber>2534</StateNumber>
+      <StateNumber>7003</StateNumber>
     </check>
-    <column id="316" parent="278" name="competition_id">
+    <column id="318" parent="278" name="competition_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;competition_competition_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2534</StateNumber>
+      <StateNumber>7003</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="317" parent="278" name="name">
+    <column id="319" parent="278" name="name">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>2534</StateNumber>
+      <StateNumber>7003</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="318" parent="278" name="fk_sport_id">
+    <column id="320" parent="278" name="fk_sport_id">
       <DataType>integer|0s</DataType>
       <Position>3</Position>
-      <StateNumber>2534</StateNumber>
+      <StateNumber>7003</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="319" parent="278" name="date_of_event">
+    <column id="321" parent="278" name="date_of_event">
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>2534</StateNumber>
+      <StateNumber>7003</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="320" parent="278" name="place">
+    <column id="322" parent="278" name="place">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>2534</StateNumber>
+      <StateNumber>7003</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="321" parent="278" name="prestige">
+    <column id="323" parent="278" name="prestige">
       <DataType>smallint|0s</DataType>
       <Position>6</Position>
-      <StateNumber>2534</StateNumber>
+      <StateNumber>7003</StateNumber>
       <TypeId>21</TypeId>
     </column>
-    <column id="322" parent="278" name="description">
+    <column id="324" parent="278" name="description">
       <DataType>text|0s</DataType>
       <Position>7</Position>
-      <StateNumber>2534</StateNumber>
+      <StateNumber>7003</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <foreign-key id="323" parent="278" name="competition_fk_sport_id_fkey">
+    <foreign-key id="325" parent="278" name="competition_fk_sport_id_fkey">
       <ColNames>fk_sport_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19686</ObjectId>
+      <ObjectId>24298</ObjectId>
       <OnDelete>set-null</OnDelete>
       <RefColNames>sport_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2534</StateNumber>
-      <RefTableId>19668</RefTableId>
+      <StateNumber>7003</StateNumber>
+      <RefTableId>24280</RefTableId>
       <RefTableName>sport</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="324" parent="278" name="competition_pkey">
+    <index id="326" parent="278" name="competition_pkey">
       <ColNames>competition_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19684</ObjectId>
+      <ObjectId>24296</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2534</StateNumber>
+      <StateNumber>7003</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="325" parent="278" name="competition_pkey">
+    <key id="327" parent="278" name="competition_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19685</ObjectId>
+      <ObjectId>24297</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2534</StateNumber>
-      <UnderlyingIndexId>19684</UnderlyingIndexId>
+      <StateNumber>7003</StateNumber>
+      <UnderlyingIndexId>24296</UnderlyingIndexId>
     </key>
-    <column id="326" parent="279" name="doctor_id">
+    <column id="328" parent="279" name="doctor_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;doctor_doctor_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2535</StateNumber>
+      <StateNumber>7004</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="327" parent="279" name="name">
+    <column id="329" parent="279" name="name">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>2535</StateNumber>
+      <StateNumber>7004</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="328" parent="279" name="rate">
+    <column id="330" parent="279" name="rate">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>3</Position>
-      <StateNumber>2535</StateNumber>
+      <StateNumber>7004</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="329" parent="279" name="doctor_pkey">
+    <index id="331" parent="279" name="doctor_pkey">
       <ColNames>doctor_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19697</ObjectId>
+      <ObjectId>24309</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2535</StateNumber>
+      <StateNumber>7004</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="330" parent="279" name="doctor_pkey">
+    <key id="332" parent="279" name="doctor_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19698</ObjectId>
+      <ObjectId>24310</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2535</StateNumber>
-      <UnderlyingIndexId>19697</UnderlyingIndexId>
+      <StateNumber>7004</StateNumber>
+      <UnderlyingIndexId>24309</UnderlyingIndexId>
     </key>
-    <column id="331" parent="280" name="exercise_id">
+    <column id="333" parent="280" name="exercise_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;exercise_exercise_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2539</StateNumber>
+      <StateNumber>7008</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="332" parent="280" name="name">
+    <column id="334" parent="280" name="name">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>2539</StateNumber>
+      <StateNumber>7008</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="333" parent="280" name="description">
+    <column id="335" parent="280" name="description">
       <DataType>text|0s</DataType>
       <Position>3</Position>
-      <StateNumber>2539</StateNumber>
+      <StateNumber>7008</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="334" parent="280" name="exercise_pkey">
+    <index id="336" parent="280" name="exercise_pkey">
       <ColNames>exercise_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19732</ObjectId>
+      <ObjectId>24344</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2539</StateNumber>
+      <StateNumber>7008</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="335" parent="280" name="exercise_name_description_key">
+    <index id="337" parent="280" name="exercise_name_description_key">
       <ColNames>name
 description</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19734</ObjectId>
-      <StateNumber>2539</StateNumber>
+      <ObjectId>24346</ObjectId>
+      <StateNumber>7008</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationIds>100
@@ -4752,597 +4764,682 @@ default</CollationNames>
       <CollationParentNames>pg_catalog
 pg_catalog</CollationParentNames>
     </index>
-    <key id="336" parent="280" name="exercise_pkey">
+    <key id="338" parent="280" name="exercise_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19733</ObjectId>
+      <ObjectId>24345</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2539</StateNumber>
-      <UnderlyingIndexId>19732</UnderlyingIndexId>
+      <StateNumber>7008</StateNumber>
+      <UnderlyingIndexId>24344</UnderlyingIndexId>
     </key>
-    <key id="337" parent="280" name="exercise_name_description_key">
+    <key id="339" parent="280" name="exercise_name_description_key">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19735</ObjectId>
-      <StateNumber>2539</StateNumber>
-      <UnderlyingIndexId>19734</UnderlyingIndexId>
+      <ObjectId>24347</ObjectId>
+      <StateNumber>7008</StateNumber>
+      <UnderlyingIndexId>24346</UnderlyingIndexId>
     </key>
-    <column id="338" parent="281" name="fk_sportsman_id">
-      <DataType>integer|0s</DataType>
+    <column id="340" parent="281" name="login">
+      <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2546</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="339" parent="281" name="fk_doctor_id">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>2546</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="340" parent="281" name="fk_coach_id">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StateNumber>2546</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <foreign-key id="341" parent="281" name="personnel_fk_sportsman_id_fkey">
-      <ColNames>fk_sportsman_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19815</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>sportsman_id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>2546</StateNumber>
-      <RefTableId>19772</RefTableId>
-      <RefTableName>sportsman</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <foreign-key id="342" parent="281" name="personnel_fk_doctor_id_fkey">
-      <ColNames>fk_doctor_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19820</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>doctor_id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>2546</StateNumber>
-      <RefTableId>19692</RefTableId>
-      <RefTableName>doctor</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <foreign-key id="343" parent="281" name="personnel_fk_coach_id_fkey">
-      <ColNames>fk_coach_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19825</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>coach_id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>2546</StateNumber>
-      <RefTableId>19700</RefTableId>
-      <RefTableName>coach</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <index id="344" parent="281" name="personnel_pkey">
-      <ColNames>fk_sportsman_id
-fk_doctor_id
-fk_coach_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19813</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>2546</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="345" parent="281" name="personnel_pkey">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19814</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>2546</StateNumber>
-      <UnderlyingIndexId>19813</UnderlyingIndexId>
-    </key>
-    <column id="346" parent="282" name="preparation_id">
-      <DataType>integer|0s</DataType>
-      <DefaultExpression>nextval(&apos;preparation_preparation_id_seq&apos;::regclass)</DefaultExpression>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>2542</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="347" parent="282" name="complex_name">
-      <DataType>varchar(100)|0s</DataType>
-      <Position>2</Position>
-      <StateNumber>2542</StateNumber>
+      <StateNumber>7012</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="348" parent="282" name="preparation_pkey">
-      <ColNames>preparation_id</ColNames>
+    <column id="341" parent="281" name="password">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>7012</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="342" parent="281" name="login_password_pkey">
+      <ColNames>login</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19767</ObjectId>
+      <ObjectId>24386</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2542</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <index id="349" parent="282" name="preparation_complex_name_key">
-      <ColNames>complex_name</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19769</ObjectId>
-      <StateNumber>2542</StateNumber>
+      <StateNumber>7012</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="350" parent="282" name="preparation_pkey">
+    <key id="343" parent="281" name="login_password_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19768</ObjectId>
+      <ObjectId>24387</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2542</StateNumber>
-      <UnderlyingIndexId>19767</UnderlyingIndexId>
+      <StateNumber>7012</StateNumber>
+      <UnderlyingIndexId>24386</UnderlyingIndexId>
     </key>
-    <key id="351" parent="282" name="preparation_complex_name_key">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19770</ObjectId>
-      <StateNumber>2542</StateNumber>
-      <UnderlyingIndexId>19769</UnderlyingIndexId>
-    </key>
-    <column id="352" parent="283" name="fk_preparation_id">
+    <column id="344" parent="282" name="fk_sportsman_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2552</StateNumber>
+      <StateNumber>7016</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="353" parent="283" name="fk_baa_id">
+    <column id="345" parent="282" name="fk_doctor_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>2552</StateNumber>
+      <StateNumber>7016</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="354" parent="283" name="preparation_baa_fk_preparation_id_fkey">
-      <ColNames>fk_preparation_id</ColNames>
+    <column id="346" parent="282" name="fk_coach_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>7016</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="347" parent="282" name="personnel_fk_sportsman_id_fkey">
+      <ColNames>fk_sportsman_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19912</ObjectId>
+      <ObjectId>24440</ObjectId>
       <OnDelete>cascade</OnDelete>
-      <RefColNames>preparation_id</RefColNames>
+      <RefColNames>sportsman_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2552</StateNumber>
-      <RefTableId>19763</RefTableId>
-      <RefTableName>preparation</RefTableName>
+      <StateNumber>7016</StateNumber>
+      <RefTableId>24400</RefTableId>
+      <RefTableName>sportsman</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="355" parent="283" name="preparation_baa_fk_baa_id_fkey">
-      <ColNames>fk_baa_id</ColNames>
+    <foreign-key id="348" parent="282" name="personnel_fk_doctor_id_fkey">
+      <ColNames>fk_doctor_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19917</ObjectId>
+      <ObjectId>24445</ObjectId>
       <OnDelete>cascade</OnDelete>
-      <RefColNames>baa_id</RefColNames>
+      <RefColNames>doctor_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2552</StateNumber>
-      <RefTableId>19715</RefTableId>
-      <RefTableName>baa</RefTableName>
+      <StateNumber>7016</StateNumber>
+      <RefTableId>24304</RefTableId>
+      <RefTableName>doctor</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="356" parent="283" name="preparation_baa_pkey">
-      <ColNames>fk_preparation_id
-fk_baa_id</ColNames>
+    <foreign-key id="349" parent="282" name="personnel_fk_coach_id_fkey">
+      <ColNames>fk_coach_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19910</ObjectId>
+      <ObjectId>24450</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>coach_id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>7016</StateNumber>
+      <RefTableId>24312</RefTableId>
+      <RefTableName>coach</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="350" parent="282" name="personnel_pkey">
+      <ColNames>fk_sportsman_id
+fk_doctor_id
+fk_coach_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24438</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2552</StateNumber>
+      <StateNumber>7016</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="357" parent="283" name="preparation_baa_pkey">
+    <key id="351" parent="282" name="personnel_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19911</ObjectId>
+      <ObjectId>24439</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2552</StateNumber>
-      <UnderlyingIndexId>19910</UnderlyingIndexId>
+      <StateNumber>7016</StateNumber>
+      <UnderlyingIndexId>24438</UnderlyingIndexId>
+    </key>
+    <column id="352" parent="283" name="preparation_id">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>nextval(&apos;preparation_preparation_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>7011</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="353" parent="283" name="complex_name">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>2</Position>
+      <StateNumber>7011</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="354" parent="283" name="preparation_pkey">
+      <ColNames>preparation_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24379</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>7011</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="355" parent="283" name="preparation_complex_name_key">
+      <ColNames>complex_name</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24381</ObjectId>
+      <StateNumber>7011</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <key id="356" parent="283" name="preparation_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24380</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>7011</StateNumber>
+      <UnderlyingIndexId>24379</UnderlyingIndexId>
+    </key>
+    <key id="357" parent="283" name="preparation_complex_name_key">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24382</ObjectId>
+      <StateNumber>7011</StateNumber>
+      <UnderlyingIndexId>24381</UnderlyingIndexId>
     </key>
     <column id="358" parent="284" name="fk_preparation_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2550</StateNumber>
+      <StateNumber>7022</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="359" parent="284" name="effectiveness">
-      <DataType>bigint|0s</DataType>
-      <DefaultExpression>0</DefaultExpression>
+    <column id="359" parent="284" name="fk_baa_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>2550</StateNumber>
-      <TypeId>20</TypeId>
+      <StateNumber>7022</StateNumber>
+      <TypeId>23</TypeId>
     </column>
-    <foreign-key id="360" parent="284" name="preparation_rate_fk_preparation_id_fkey">
+    <foreign-key id="360" parent="284" name="preparation_baa_fk_preparation_id_fkey">
       <ColNames>fk_preparation_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19890</ObjectId>
+      <ObjectId>24537</ObjectId>
       <OnDelete>cascade</OnDelete>
       <RefColNames>preparation_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2550</StateNumber>
-      <RefTableId>19763</RefTableId>
+      <StateNumber>7022</StateNumber>
+      <RefTableId>24375</RefTableId>
       <RefTableName>preparation</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="361" parent="284" name="preparation_rate_pkey">
-      <ColNames>fk_preparation_id</ColNames>
+    <foreign-key id="361" parent="284" name="preparation_baa_fk_baa_id_fkey">
+      <ColNames>fk_baa_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19888</ObjectId>
+      <ObjectId>24542</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>baa_id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>7022</StateNumber>
+      <RefTableId>24327</RefTableId>
+      <RefTableName>baa</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="362" parent="284" name="preparation_baa_pkey">
+      <ColNames>fk_preparation_id
+fk_baa_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24535</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2550</StateNumber>
+      <StateNumber>7022</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="362" parent="284" name="preparation_rate_pkey">
+    <key id="363" parent="284" name="preparation_baa_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19889</ObjectId>
+      <ObjectId>24536</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2550</StateNumber>
-      <UnderlyingIndexId>19888</UnderlyingIndexId>
+      <StateNumber>7022</StateNumber>
+      <UnderlyingIndexId>24535</UnderlyingIndexId>
     </key>
-    <column id="363" parent="285" name="fk_preparation_id">
+    <column id="364" parent="285" name="fk_preparation_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2553</StateNumber>
+      <StateNumber>7020</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="364" parent="285" name="fk_training_id">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
+    <column id="365" parent="285" name="effectiveness">
+      <DataType>bigint|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
       <Position>2</Position>
-      <StateNumber>2553</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>7020</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <foreign-key id="365" parent="285" name="preparation_training_fk_preparation_id_fkey">
+    <foreign-key id="366" parent="285" name="preparation_rate_fk_preparation_id_fkey">
       <ColNames>fk_preparation_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19927</ObjectId>
+      <ObjectId>24515</ObjectId>
       <OnDelete>cascade</OnDelete>
       <RefColNames>preparation_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2553</StateNumber>
-      <RefTableId>19763</RefTableId>
+      <StateNumber>7020</StateNumber>
+      <RefTableId>24375</RefTableId>
       <RefTableName>preparation</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="366" parent="285" name="preparation_training_fk_training_id_fkey">
-      <ColNames>fk_training_id</ColNames>
+    <index id="367" parent="285" name="preparation_rate_pkey">
+      <ColNames>fk_preparation_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19932</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>training_id</RefColNames>
-      <RefColPositions>1</RefColPositions>
-      <StateNumber>2553</StateNumber>
-      <RefTableId>19737</RefTableId>
-      <RefTableName>training</RefTableName>
-      <RefTableKind>table</RefTableKind>
-    </foreign-key>
-    <index id="367" parent="285" name="preparation_training_pkey">
-      <ColNames>fk_preparation_id
-fk_training_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19925</ObjectId>
+      <ObjectId>24513</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2553</StateNumber>
+      <StateNumber>7020</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="368" parent="285" name="preparation_training_pkey">
+    <key id="368" parent="285" name="preparation_rate_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19926</ObjectId>
+      <ObjectId>24514</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2553</StateNumber>
-      <UnderlyingIndexId>19925</UnderlyingIndexId>
+      <StateNumber>7020</StateNumber>
+      <UnderlyingIndexId>24513</UnderlyingIndexId>
     </key>
-    <column id="369" parent="286" name="sport_id">
+    <column id="369" parent="286" name="fk_preparation_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>7023</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="370" parent="286" name="fk_training_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>7023</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="371" parent="286" name="preparation_training_fk_preparation_id_fkey">
+      <ColNames>fk_preparation_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24552</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>preparation_id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>7023</StateNumber>
+      <RefTableId>24375</RefTableId>
+      <RefTableName>preparation</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="372" parent="286" name="preparation_training_fk_training_id_fkey">
+      <ColNames>fk_training_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24557</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>training_id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>7023</StateNumber>
+      <RefTableId>24349</RefTableId>
+      <RefTableName>training</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="373" parent="286" name="preparation_training_pkey">
+      <ColNames>fk_preparation_id
+fk_training_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24550</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>7023</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="374" parent="286" name="preparation_training_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24551</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>7023</StateNumber>
+      <UnderlyingIndexId>24550</UnderlyingIndexId>
+    </key>
+    <column id="375" parent="287" name="sport_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;sport_sport_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2533</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="370" parent="286" name="name">
-      <DataType>varchar(50)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>2533</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="371" parent="286" name="sport_pkey">
-      <ColNames>sport_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19672</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>2533</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <index id="372" parent="286" name="sport_name_key">
-      <ColNames>name</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19674</ObjectId>
-      <StateNumber>2533</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-      <CollationNames>default</CollationNames>
-      <CollationIds>100</CollationIds>
-      <CollationParentNames>pg_catalog</CollationParentNames>
-    </index>
-    <key id="373" parent="286" name="sport_pkey">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19673</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>2533</StateNumber>
-      <UnderlyingIndexId>19672</UnderlyingIndexId>
-    </key>
-    <key id="374" parent="286" name="sport_name_key">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19675</ObjectId>
-      <StateNumber>2533</StateNumber>
-      <UnderlyingIndexId>19674</UnderlyingIndexId>
-    </key>
-    <column id="375" parent="287" name="sport_team_id">
-      <DataType>integer|0s</DataType>
-      <DefaultExpression>nextval(&apos;sport_team_sport_team_id_seq&apos;::regclass)</DefaultExpression>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>2537</StateNumber>
+      <StateNumber>7002</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="376" parent="287" name="name">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>2537</StateNumber>
+      <StateNumber>7002</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="377" parent="287" name="average_rate">
-      <DataType>double precision|0s</DataType>
-      <Position>3</Position>
-      <StateNumber>2537</StateNumber>
-      <TypeId>701</TypeId>
-    </column>
-    <index id="378" parent="287" name="sport_team_pkey">
-      <ColNames>sport_team_id</ColNames>
+    <index id="377" parent="287" name="sport_pkey">
+      <ColNames>sport_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19712</ObjectId>
+      <ObjectId>24284</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2537</StateNumber>
+      <StateNumber>7002</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="379" parent="287" name="sport_team_pkey">
+    <index id="378" parent="287" name="sport_name_key">
+      <ColNames>name</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19713</ObjectId>
+      <ObjectId>24286</ObjectId>
+      <StateNumber>7002</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <key id="379" parent="287" name="sport_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24285</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2537</StateNumber>
-      <UnderlyingIndexId>19712</UnderlyingIndexId>
+      <StateNumber>7002</StateNumber>
+      <UnderlyingIndexId>24284</UnderlyingIndexId>
     </key>
-    <column id="380" parent="288" name="fk_sport_team_id">
+    <key id="380" parent="287" name="sport_name_key">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24287</ObjectId>
+      <StateNumber>7002</StateNumber>
+      <UnderlyingIndexId>24286</UnderlyingIndexId>
+    </key>
+    <column id="381" parent="288" name="sport_team_id">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>nextval(&apos;sport_team_sport_team_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>7006</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="382" parent="288" name="name">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>7006</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="383" parent="288" name="average_rate">
+      <DataType>double precision|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>7006</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <index id="384" parent="288" name="sport_team_pkey">
+      <ColNames>sport_team_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24324</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>7006</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="385" parent="288" name="sport_team_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24325</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>7006</StateNumber>
+      <UnderlyingIndexId>24324</UnderlyingIndexId>
+    </key>
+    <column id="386" parent="289" name="fk_sport_team_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2545</StateNumber>
+      <StateNumber>7015</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="381" parent="288" name="fk_sport_id">
+    <column id="387" parent="289" name="fk_sport_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>2545</StateNumber>
+      <StateNumber>7015</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="382" parent="288" name="fk_sportsman_id">
+    <column id="388" parent="289" name="fk_sportsman_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>2545</StateNumber>
+      <StateNumber>7015</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="383" parent="288" name="sport_team_sport_fk_sport_team_id_fkey">
+    <foreign-key id="389" parent="289" name="sport_team_sport_fk_sport_team_id_fkey">
       <ColNames>fk_sport_team_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19795</ObjectId>
+      <ObjectId>24420</ObjectId>
       <OnDelete>cascade</OnDelete>
       <RefColNames>sport_team_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2545</StateNumber>
-      <RefTableId>19708</RefTableId>
+      <StateNumber>7015</StateNumber>
+      <RefTableId>24320</RefTableId>
       <RefTableName>sport_team</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="384" parent="288" name="sport_team_sport_fk_sport_id_fkey">
+    <foreign-key id="390" parent="289" name="sport_team_sport_fk_sport_id_fkey">
       <ColNames>fk_sport_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19800</ObjectId>
+      <ObjectId>24425</ObjectId>
       <OnDelete>cascade</OnDelete>
       <RefColNames>sport_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2545</StateNumber>
-      <RefTableId>19668</RefTableId>
+      <StateNumber>7015</StateNumber>
+      <RefTableId>24280</RefTableId>
       <RefTableName>sport</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="385" parent="288" name="sport_team_sport_fk_sportsman_id_fkey">
+    <foreign-key id="391" parent="289" name="sport_team_sport_fk_sportsman_id_fkey">
       <ColNames>fk_sportsman_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19805</ObjectId>
+      <ObjectId>24430</ObjectId>
       <OnDelete>cascade</OnDelete>
       <RefColNames>sportsman_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2545</StateNumber>
-      <RefTableId>19772</RefTableId>
+      <StateNumber>7015</StateNumber>
+      <RefTableId>24400</RefTableId>
       <RefTableName>sportsman</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="386" parent="288" name="sport_team_sport_pkey">
+    <index id="392" parent="289" name="sport_team_sport_pkey">
       <ColNames>fk_sport_team_id
 fk_sport_id
 fk_sportsman_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19793</ObjectId>
+      <ObjectId>24418</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2545</StateNumber>
+      <StateNumber>7015</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="387" parent="288" name="sport_team_sport_pkey">
+    <key id="393" parent="289" name="sport_team_sport_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19794</ObjectId>
+      <ObjectId>24419</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2545</StateNumber>
-      <UnderlyingIndexId>19793</UnderlyingIndexId>
+      <StateNumber>7015</StateNumber>
+      <UnderlyingIndexId>24418</UnderlyingIndexId>
     </key>
-    <column id="388" parent="289" name="sportsman_id">
+    <column id="394" parent="290" name="sportsman_id">
       <DataType>integer|0s</DataType>
-      <DefaultExpression>nextval(&apos;sportsman_sportsman_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2543</StateNumber>
+      <StateNumber>7014</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="389" parent="289" name="full_name">
+    <column id="395" parent="290" name="full_name">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>2543</StateNumber>
+      <StateNumber>7014</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="390" parent="289" name="sex">
+    <column id="396" parent="290" name="sex">
       <DataType>sex|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>2543</StateNumber>
+      <StateNumber>7014</StateNumber>
       <TypeId>18578</TypeId>
     </column>
-    <column id="391" parent="289" name="date_of_birth">
+    <column id="397" parent="290" name="date_of_birth">
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>2543</StateNumber>
+      <StateNumber>7014</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="392" parent="289" name="fk_sport_team_id">
+    <column id="398" parent="290" name="fk_sport_team_id">
       <DataType>integer|0s</DataType>
       <Position>5</Position>
-      <StateNumber>2543</StateNumber>
+      <StateNumber>7014</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="393" parent="289" name="sportsman_fk_sport_team_id_fkey">
+    <foreign-key id="399" parent="290" name="sportsman_sportsman_id_fkey">
+      <ColNames>sportsman_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24405</ObjectId>
+      <RefColNames>sportsman_id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>7014</StateNumber>
+      <RefTableId>24389</RefTableId>
+      <RefTableName>sportsman_login</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="400" parent="290" name="sportsman_fk_sport_team_id_fkey">
       <ColNames>fk_sport_team_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19778</ObjectId>
+      <ObjectId>24410</ObjectId>
       <OnDelete>set-null</OnDelete>
       <RefColNames>sport_team_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2543</StateNumber>
-      <RefTableId>19708</RefTableId>
+      <StateNumber>7014</StateNumber>
+      <RefTableId>24320</RefTableId>
       <RefTableName>sport_team</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="394" parent="289" name="sportsman_pkey">
+    <index id="401" parent="290" name="sportsman_pkey">
       <ColNames>sportsman_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19776</ObjectId>
+      <ObjectId>24403</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2543</StateNumber>
+      <StateNumber>7014</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="395" parent="289" name="sportsman_pkey">
+    <key id="402" parent="290" name="sportsman_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19777</ObjectId>
+      <ObjectId>24404</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2543</StateNumber>
-      <UnderlyingIndexId>19776</UnderlyingIndexId>
+      <StateNumber>7014</StateNumber>
+      <UnderlyingIndexId>24403</UnderlyingIndexId>
     </key>
-    <column id="396" parent="290" name="fk_sportsman_id">
+    <column id="403" parent="291" name="fk_sportsman_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2548</StateNumber>
+      <StateNumber>7018</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="397" parent="290" name="fk_competition_id">
+    <column id="404" parent="291" name="fk_competition_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>2548</StateNumber>
+      <StateNumber>7018</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="398" parent="290" name="fk_preparation_id">
+    <column id="405" parent="291" name="fk_preparation_id">
       <DataType>integer|0s</DataType>
       <Position>3</Position>
-      <StateNumber>2548</StateNumber>
+      <StateNumber>7018</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="399" parent="290" name="rating_difference">
+    <column id="406" parent="291" name="rating_difference">
       <DataType>smallint|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>4</Position>
-      <StateNumber>2548</StateNumber>
+      <StateNumber>7018</StateNumber>
       <TypeId>21</TypeId>
     </column>
-    <foreign-key id="400" parent="290" name="sportsman_competition_fk_sportsman_id_fkey">
+    <foreign-key id="407" parent="291" name="sportsman_competition_fk_sportsman_id_fkey">
       <ColNames>fk_sportsman_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19857</ObjectId>
+      <ObjectId>24482</ObjectId>
       <OnDelete>cascade</OnDelete>
       <RefColNames>sportsman_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2548</StateNumber>
-      <RefTableId>19772</RefTableId>
+      <StateNumber>7018</StateNumber>
+      <RefTableId>24400</RefTableId>
       <RefTableName>sportsman</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="401" parent="290" name="sportsman_competition_fk_competition_id_fkey">
+    <foreign-key id="408" parent="291" name="sportsman_competition_fk_competition_id_fkey">
       <ColNames>fk_competition_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19862</ObjectId>
+      <ObjectId>24487</ObjectId>
       <OnDelete>cascade</OnDelete>
       <RefColNames>competition_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2548</StateNumber>
-      <RefTableId>19677</RefTableId>
+      <StateNumber>7018</StateNumber>
+      <RefTableId>24289</RefTableId>
       <RefTableName>competition</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="402" parent="290" name="sportsman_competition_fk_preparation_id_fkey">
+    <foreign-key id="409" parent="291" name="sportsman_competition_fk_preparation_id_fkey">
       <ColNames>fk_preparation_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19867</ObjectId>
+      <ObjectId>24492</ObjectId>
       <OnDelete>set-null</OnDelete>
       <RefColNames>preparation_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2548</StateNumber>
-      <RefTableId>19763</RefTableId>
+      <StateNumber>7018</StateNumber>
+      <RefTableId>24375</RefTableId>
       <RefTableName>preparation</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="403" parent="290" name="sportsman_competition_pkey">
+    <index id="410" parent="291" name="sportsman_competition_pkey">
       <ColNames>fk_sportsman_id
 fk_competition_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19855</ObjectId>
+      <ObjectId>24480</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2548</StateNumber>
+      <StateNumber>7018</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="404" parent="290" name="sportsman_competition_pkey">
+    <key id="411" parent="291" name="sportsman_competition_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19856</ObjectId>
+      <ObjectId>24481</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2548</StateNumber>
-      <UnderlyingIndexId>19855</UnderlyingIndexId>
+      <StateNumber>7018</StateNumber>
+      <UnderlyingIndexId>24480</UnderlyingIndexId>
     </key>
-    <column id="405" parent="291" name="sportsman_id">
+    <column id="412" parent="292" name="sportsman_id">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>nextval(&apos;sportsman_login_sportsman_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>7013</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="413" parent="292" name="login">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>7013</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <foreign-key id="414" parent="292" name="sportsman_login_login_fkey">
+      <ColNames>login</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24395</ObjectId>
+      <RefColNames>login</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>7013</StateNumber>
+      <RefTableId>24383</RefTableId>
+      <RefTableName>login_password</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="415" parent="292" name="sportsman_login_pkey">
+      <ColNames>sportsman_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24393</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>7013</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="416" parent="292" name="sportsman_login_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>24394</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>7013</StateNumber>
+      <UnderlyingIndexId>24393</UnderlyingIndexId>
+    </key>
+    <column id="417" parent="293" name="sportsman_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;sportsman_password_sportsman_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5350,14 +5447,14 @@ fk_competition_id</ColNames>
       <StateNumber>2544</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="406" parent="291" name="password">
+    <column id="418" parent="293" name="password">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>2544</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="407" parent="291" name="sportsman_password_pkey">
+    <index id="419" parent="293" name="sportsman_password_pkey">
       <ColNames>sportsman_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>19788</ObjectId>
@@ -5366,129 +5463,129 @@ fk_competition_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="408" parent="291" name="sportsman_password_pkey">
+    <key id="420" parent="293" name="sportsman_password_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>19789</ObjectId>
       <Primary>1</Primary>
       <StateNumber>2544</StateNumber>
       <UnderlyingIndexId>19788</UnderlyingIndexId>
     </key>
-    <column id="409" parent="292" name="fk_sportsman_id">
+    <column id="421" parent="294" name="fk_sportsman_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2547</StateNumber>
+      <StateNumber>7017</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="410" parent="292" name="fk_sport_id">
+    <column id="422" parent="294" name="fk_sport_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>2547</StateNumber>
+      <StateNumber>7017</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="411" parent="292" name="rate">
+    <column id="423" parent="294" name="rate">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>3</Position>
-      <StateNumber>2547</StateNumber>
+      <StateNumber>7017</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="412" parent="292" name="fk_preparation_id">
+    <column id="424" parent="294" name="fk_preparation_id">
       <DataType>integer|0s</DataType>
       <Position>4</Position>
-      <StateNumber>2547</StateNumber>
+      <StateNumber>7017</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="413" parent="292" name="sportsman_sport_fk_sportsman_id_fkey">
+    <foreign-key id="425" parent="294" name="sportsman_sport_fk_sportsman_id_fkey">
       <ColNames>fk_sportsman_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19836</ObjectId>
+      <ObjectId>24461</ObjectId>
       <OnDelete>cascade</OnDelete>
       <RefColNames>sportsman_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2547</StateNumber>
-      <RefTableId>19772</RefTableId>
+      <StateNumber>7017</StateNumber>
+      <RefTableId>24400</RefTableId>
       <RefTableName>sportsman</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="414" parent="292" name="sportsman_sport_fk_sport_id_fkey">
+    <foreign-key id="426" parent="294" name="sportsman_sport_fk_sport_id_fkey">
       <ColNames>fk_sport_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19841</ObjectId>
+      <ObjectId>24466</ObjectId>
       <OnDelete>cascade</OnDelete>
       <RefColNames>sport_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2547</StateNumber>
-      <RefTableId>19668</RefTableId>
+      <StateNumber>7017</StateNumber>
+      <RefTableId>24280</RefTableId>
       <RefTableName>sport</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="415" parent="292" name="sportsman_sport_fk_preparation_id_fkey">
+    <foreign-key id="427" parent="294" name="sportsman_sport_fk_preparation_id_fkey">
       <ColNames>fk_preparation_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19846</ObjectId>
+      <ObjectId>24471</ObjectId>
       <OnDelete>set-null</OnDelete>
       <RefColNames>preparation_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2547</StateNumber>
-      <RefTableId>19763</RefTableId>
+      <StateNumber>7017</StateNumber>
+      <RefTableId>24375</RefTableId>
       <RefTableName>preparation</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="416" parent="292" name="sportsman_sport_pkey">
+    <index id="428" parent="294" name="sportsman_sport_pkey">
       <ColNames>fk_sportsman_id
 fk_sport_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19834</ObjectId>
+      <ObjectId>24459</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2547</StateNumber>
+      <StateNumber>7017</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="417" parent="292" name="sportsman_sport_pkey">
+    <key id="429" parent="294" name="sportsman_sport_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19835</ObjectId>
+      <ObjectId>24460</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2547</StateNumber>
-      <UnderlyingIndexId>19834</UnderlyingIndexId>
+      <StateNumber>7017</StateNumber>
+      <UnderlyingIndexId>24459</UnderlyingIndexId>
     </key>
-    <column id="418" parent="293" name="training_id">
+    <column id="430" parent="295" name="training_id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;training_training_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2540</StateNumber>
+      <StateNumber>7009</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="419" parent="293" name="name">
+    <column id="431" parent="295" name="name">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>2540</StateNumber>
+      <StateNumber>7009</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="420" parent="293" name="description">
+    <column id="432" parent="295" name="description">
       <DataType>text|0s</DataType>
       <Position>3</Position>
-      <StateNumber>2540</StateNumber>
+      <StateNumber>7009</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="421" parent="293" name="training_pkey">
+    <index id="433" parent="295" name="training_pkey">
       <ColNames>training_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19743</ObjectId>
+      <ObjectId>24355</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2540</StateNumber>
+      <StateNumber>7009</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="422" parent="293" name="training_name_description_key">
+    <index id="434" parent="295" name="training_name_description_key">
       <ColNames>name
 description</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19745</ObjectId>
-      <StateNumber>2540</StateNumber>
+      <ObjectId>24357</ObjectId>
+      <StateNumber>7009</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationIds>100
@@ -5498,122 +5595,122 @@ default</CollationNames>
       <CollationParentNames>pg_catalog
 pg_catalog</CollationParentNames>
     </index>
-    <key id="423" parent="293" name="training_pkey">
+    <key id="435" parent="295" name="training_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19744</ObjectId>
+      <ObjectId>24356</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2540</StateNumber>
-      <UnderlyingIndexId>19743</UnderlyingIndexId>
+      <StateNumber>7009</StateNumber>
+      <UnderlyingIndexId>24355</UnderlyingIndexId>
     </key>
-    <key id="424" parent="293" name="training_name_description_key">
+    <key id="436" parent="295" name="training_name_description_key">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19746</ObjectId>
-      <StateNumber>2540</StateNumber>
-      <UnderlyingIndexId>19745</UnderlyingIndexId>
+      <ObjectId>24358</ObjectId>
+      <StateNumber>7009</StateNumber>
+      <UnderlyingIndexId>24357</UnderlyingIndexId>
     </key>
-    <column id="425" parent="294" name="fk_training_id">
+    <column id="437" parent="296" name="fk_training_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2541</StateNumber>
+      <StateNumber>7010</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="426" parent="294" name="fk_exercise_id">
+    <column id="438" parent="296" name="fk_exercise_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>2541</StateNumber>
+      <StateNumber>7010</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="427" parent="294" name="training_exercise_fk_training_id_fkey">
+    <foreign-key id="439" parent="296" name="training_exercise_fk_training_id_fkey">
       <ColNames>fk_training_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19752</ObjectId>
+      <ObjectId>24364</ObjectId>
       <OnDelete>cascade</OnDelete>
       <RefColNames>training_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2541</StateNumber>
-      <RefTableId>19737</RefTableId>
+      <StateNumber>7010</StateNumber>
+      <RefTableId>24349</RefTableId>
       <RefTableName>training</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="428" parent="294" name="training_exercise_fk_exercise_id_fkey">
+    <foreign-key id="440" parent="296" name="training_exercise_fk_exercise_id_fkey">
       <ColNames>fk_exercise_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19757</ObjectId>
+      <ObjectId>24369</ObjectId>
       <OnDelete>cascade</OnDelete>
       <RefColNames>exercise_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2541</StateNumber>
-      <RefTableId>19726</RefTableId>
+      <StateNumber>7010</StateNumber>
+      <RefTableId>24338</RefTableId>
       <RefTableName>exercise</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="429" parent="294" name="training_exercise_pkey">
+    <index id="441" parent="296" name="training_exercise_pkey">
       <ColNames>fk_training_id
 fk_exercise_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19750</ObjectId>
+      <ObjectId>24362</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2541</StateNumber>
+      <StateNumber>7010</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="430" parent="294" name="training_exercise_pkey">
+    <key id="442" parent="296" name="training_exercise_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19751</ObjectId>
+      <ObjectId>24363</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2541</StateNumber>
-      <UnderlyingIndexId>19750</UnderlyingIndexId>
+      <StateNumber>7010</StateNumber>
+      <UnderlyingIndexId>24362</UnderlyingIndexId>
     </key>
-    <column id="431" parent="295" name="fk_training_id">
+    <column id="443" parent="297" name="fk_training_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2551</StateNumber>
+      <StateNumber>7021</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="432" parent="295" name="number_uses">
+    <column id="444" parent="297" name="number_uses">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>2</Position>
-      <StateNumber>2551</StateNumber>
+      <StateNumber>7021</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="433" parent="295" name="all_time_rate_difference">
+    <column id="445" parent="297" name="all_time_rate_difference">
       <DataType>integer|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <Position>3</Position>
-      <StateNumber>2551</StateNumber>
+      <StateNumber>7021</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="434" parent="295" name="training_rate_fk_training_id_fkey">
+    <foreign-key id="446" parent="297" name="training_rate_fk_training_id_fkey">
       <ColNames>fk_training_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19902</ObjectId>
+      <ObjectId>24527</ObjectId>
       <OnDelete>cascade</OnDelete>
       <RefColNames>training_id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>2551</StateNumber>
-      <RefTableId>19737</RefTableId>
+      <StateNumber>7021</StateNumber>
+      <RefTableId>24349</RefTableId>
       <RefTableName>training</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="435" parent="295" name="training_rate_pkey">
+    <index id="447" parent="297" name="training_rate_pkey">
       <ColNames>fk_training_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19900</ObjectId>
+      <ObjectId>24525</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2551</StateNumber>
+      <StateNumber>7021</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="436" parent="295" name="training_rate_pkey">
+    <key id="448" parent="297" name="training_rate_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>19901</ObjectId>
+      <ObjectId>24526</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2551</StateNumber>
-      <UnderlyingIndexId>19900</UnderlyingIndexId>
+      <StateNumber>7021</StateNumber>
+      <UnderlyingIndexId>24525</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

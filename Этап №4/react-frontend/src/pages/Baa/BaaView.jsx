@@ -36,9 +36,7 @@ export default function BaaView(props) {
         setAllTimeRatingDifference(temp[0].allTimeRatingDifference);
       })
       .catch(function (error) {
-        if (error.response) {
           navigate("/sportsman/baa");
-        }
       });
     // setTitle(baaList[0].name);
     // setDescription(baaList[0].description);
