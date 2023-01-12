@@ -11,6 +11,9 @@ SELECT * from baa_rate;
 SELECT * FROM baa WHERE baa_id = 1;
 SELECT * from preparation_training;
 SELECT * from training_rate;
+SELECT sportsman_id FROM login_password
+    JOIN sportsman_login on sportsman_login.login = login_password.login
+    WHERE login_password.login = 'me1' and login_password.password = 'lalala';
 
 UPDATE sportsman_competition SET rating_difference = -15000
                              WHERE fk_sportsman_id = 1 and fk_competition_id = 2 and fk_preparation_id = 2;

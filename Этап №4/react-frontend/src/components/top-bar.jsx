@@ -71,7 +71,7 @@ function ResponsiveAppBar() {
         <Toolbar disableGutters>
           <Box
             sx={{ mr: "100px" }}
-            hidden={localStorage.getItem("id") === null ? "true" : "false"}
+            // hidden={localStorage.getItem("id") === null ? "true" : "false"}
           >
             <IconButton
               size="large"

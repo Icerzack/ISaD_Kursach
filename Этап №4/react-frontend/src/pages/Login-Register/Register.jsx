@@ -18,17 +18,24 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 
 export default function Login() {
-  const [birthDate, setBirthDate] = React.useState(dayjs("2022-01-12"));
+  const [birthDate, setBirthDate] = React.useState("");
   const [sex, setSex] = React.useState("");
   const [login, setLogin] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [username, setUsername] = React.useState("");
+  const [fullname, setFullname] = React.useState("");
 
   const navigate = useNavigate();
 
   function DatePicker() {
     const handleChange = (newValue) => {
-      setBirthDate(newValue);
+      const year = newValue.get('year');
+      const month = newValue.get('month')+1;
+      const day = newValue.get('date');
+
+      const total = day+"/"+month+"/"+year;
+
+      console.log(total)
+      setBirthDate(newValue.toDate());
     };
 
     return (
@@ -68,8 +75,8 @@ export default function Login() {
     );
   }
 
-  const handleUsernameInput = (event) => {
-    setUsername(event.currentTarget.value);
+  const handleFullNameInput = (event) => {
+    setFullname(event.currentTarget.value);
   };
 
   const handleLoginInput = (event) => {
@@ -86,21 +93,21 @@ export default function Login() {
 
   const handleButtonClick = (event) => {
     const url =
-      "http://localhost:32456/login?username=" +
+      "http://localhost:32456/register?username=" +
       login +
       "&password=" +
       password +
-      "&password=" +
-      password;
+      "&sex=" +
+      sex +
+      "&date_of_birth=" +
+      birthDate+
+      "&full_name=" +
+      fullname;
     axios({
       method: "get",
       url: url,
     }).then(function (response) {
-      if (response.status === 200) {
         localStorage.setItem("id", response.data[0].id);
-        localStorage.setItem("login", login);
-        localStorage.setItem("password", password);
-      }
     });
   };
 
@@ -131,7 +138,7 @@ export default function Login() {
               id="outlined-basic"
               label="Имя + Фамилия"
               variant="outlined"
-              onChange={handleUsernameInput}
+              onChange={handleFullNameInput}
             />
             <SexSelect></SexSelect>
             <DatePicker></DatePicker>

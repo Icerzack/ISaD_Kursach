@@ -20,7 +20,7 @@ const WhiteBorderTextField = styled(TextField)`
   }
 `;
 
-export default function Baa(props) {
+export default function Exercises(props) {
   const [searchText, setSearchText] = React.useState("");
   const [diplayList, setDisplayList] = React.useState([]);
   const [number, setNumber] = React.useState("");

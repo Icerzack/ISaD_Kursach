@@ -9,6 +9,7 @@ import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import { baaList } from "../../helpers/baa";
 import { useEffect } from "react";
+import axios from "axios";
 
 const WhiteBorderTextField = styled(TextField)`
   & label.Mui-focused {
@@ -21,7 +22,7 @@ const WhiteBorderTextField = styled(TextField)`
   }
 `;
 
-export default function Baa(props) {
+export default function Trainings(props) {
   const [searchText, setSearchText] = React.useState("");
   const [diplayList, setDisplayList] = React.useState([]);
   const [number, setNumber] = React.useState("");
@@ -32,13 +33,18 @@ export default function Baa(props) {
   let gridHeight = h - 60;
 
   useEffect(() => {
-    setDisplayList(baaList);
+    const url = "http://localhost:32456/get/training?count=" + number;
+    axios({
+      method: "get",
+      url: url,
+    }).then(function (response) {
+      setDisplayList(response.data.body);
+    });
   }, []);
 
   const filteredList = diplayList.filter((item) => {
     const name = item.name.toLocaleLowerCase();
-    const manufacturer = item.manufacturer.toLocaleLowerCase();
-    return name.includes(searchText) || manufacturer.includes(searchText);
+    return name.includes(searchText);
   });
 
   const sectionStyle = {
@@ -57,17 +63,30 @@ export default function Baa(props) {
   };
 
   const handleSortByRating = (event) => {
-    //TODO: Делаем реквест
+    const url = "http://localhost:32456/get/training?count=" + number;
+    axios({
+      method: "get",
+      url: url,
+    }).then(function (response) {
+      setDisplayList(response.data.body);
+    });
   };
 
   const handleSortByUses = (event) => {
-    //TODO: Делаем реквест
+    const url =
+      "http://localhost:32456/get/training?count=" + number + "&order_type=uses";
+    axios({
+      method: "get",
+      url: url,
+    }).then(function (response) {
+      setDisplayList(response.data.body);
+    });
   };
 
   const handleCardClicked = (event) => {
     const clickedId = event.currentTarget.getAttribute("name");
     console.log(clickedId);
-    const url = "/sportsman/baa/" + clickedId;
+    const url = "/sportsman/trainings/" + clickedId;
     navigate(url);
   };
 
@@ -148,7 +167,6 @@ export default function Baa(props) {
                   name={element.id}
                   title={element.name}
                   onCardClick={handleCardClicked}
-                  shortDescription={element.manufacturer}
                 ></DisplayCard>
               ))}
             </Box>

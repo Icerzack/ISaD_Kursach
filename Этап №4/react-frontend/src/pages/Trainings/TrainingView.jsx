@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DisplayCard from "../../components/card";
+import Button from "@mui/material/Button";
 
 export default function TrainingView(props) {
   const { id } = useParams();
@@ -27,7 +28,8 @@ export default function TrainingView(props) {
         let temp = response.data.body;
         setName(temp[0].name);
         setDescription(temp[0].description);
-        setExercises(temp[0].exercises);
+        setUses(temp[0].uses);
+        setAllTimeRatingDifference(temp[0].allTimeRatingDifference);
       })
       .catch(function (error) {
         if (error.response) {
@@ -38,6 +40,17 @@ export default function TrainingView(props) {
 
   let h = window.innerHeight;
   let gridHeight = h - 60;
+
+const handleButtonClick = () => {
+  const url =
+  "http://localhost:32456/get/training/exercises?training_id=" + id;
+axios({
+  method: "get",
+  url: url,
+}).then(function (response) {
+  setExercises(response.data.body);
+});
+}
 
   const handleCardClick = () => {};
 
@@ -67,6 +80,13 @@ export default function TrainingView(props) {
         <Box>
           <h1>{name}</h1>
         </Box>
+        <Button
+                variant="contained"
+                sx={{ mb: 5 }}
+                onClick={handleButtonClick}
+              >
+                Показать Упражнения
+              </Button>
         <Box sx={{ width: "100%", overflow: "auto" }}>
           {exercises.map((element) => (
             <DisplayCard

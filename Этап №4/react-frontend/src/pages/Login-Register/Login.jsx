@@ -36,11 +36,10 @@ export default function Login() {
       method: "get",
       url: url,
     }).then(function (response) {
-      if (response.status === 200) {
-        localStorage.setItem("id", response.data[0].id);
+        localStorage.setItem("id", response.data.body[0].id);
         localStorage.setItem("login", login);
         localStorage.setItem("password", password);
-      }
+        navigate("/sportsman/"+response.data.body[0].id);
     });
   };
 
