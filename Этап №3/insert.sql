@@ -190,6 +190,31 @@ VALUES
 -- INSERT INTO sportsman_login(sportsman_id, login)
 -- VALUES
 --     (1, 'me');
+INSERT INTO login_password(login, password)
+VALUES
+    ('me1', 'lalala'),
+    ('me2', 'lalala'),
+    ('me3', 'lalala'),
+    ('me4', 'lalala'),
+    ('me5', 'lalala'),
+    ('me6', 'lalala'),
+    ('me7', 'lalala'),
+    ('me8', 'lalala'),
+    ('me9', 'lalala'),
+    ('me10', 'lalala');
+
+INSERT INTO sportsman_login(sportsman_id, login)
+VALUES
+    (1, 'me1'),
+    (2, 'me2'),
+    (3, 'me3'),
+    (4, 'me4'),
+    (5, 'me5'),
+    (6, 'me6'),
+    (7, 'me7'),
+    (8, 'me8'),
+    (9, 'me9'),
+    (10, 'me10');
 
 INSERT INTO personnel(fk_sportsman_id, fk_doctor_id, fk_coach_id)
 VALUES
